@@ -10,8 +10,10 @@ body {
 }
 h3 {
    background-image: url(../imgs/h3.png);
+   padding: 2px;
    padding-left: 5px;
    border: 1px solid #ddd;
+   font-size: 100%;
 }
 .block p {
    padding-left: 20px;
@@ -54,4 +56,19 @@ pre {
 
 dl {
   margin-left: 20px
+}
+
+div.right {
+  float: right;
+}
+div.left {
+  float: left;
+}
+div.clear {
+  clear: both;
+}
+.social div {
+   display: inline;
+   float: left;
+   width: 110px;
 }
