@@ -65,7 +65,7 @@ var _gaq = _gaq || [];
        <div class="main">
         <div class="block">
           <h3>AsakusaSatellite とは</h3>
-          <p>AsakusaSatellite は、開発者向けのリアルタイムチャットアプリケーションです。開発者同士のコミュニケーション品質を向上し、ソフトウェア開発にリズムをもたらします。</p>
+          <p>AsakusaSatellite は、開発者向けのリアルタイムチャットアプリケーションです。開発者間のコミュニケーション品質を向上し、ソフトウェア開発にリズムをもたらします。</p>
           <div>
             <div class="left" style="width:50%">
               <img src="imgs/ss_all.png">
@@ -122,7 +122,8 @@ var _gaq = _gaq || [];
           <h3>動作環境</h3>
           <ul>
             <li>Ruby 1.8.7</li>
-            <li>Ruby on Rails 3.0.3</li>
+            <li>RubyGems 1.4.2 or later</li>
+            <li>Bundler 1.0.7 or later</li>
             <li><strong>Google Chrome 9</strong> or later (クライアント)</li>
           </ul>
         </div>
@@ -130,7 +131,7 @@ var _gaq = _gaq || [];
           <h3>インストール</h3>
           <p>以下のコマンドを実行した後 <a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしてください。</p>
           <pre>
-$ git clone https://codefirst@github.com/codefirst/AsakusaSatellite.git
+$ git clone git://github.com/codefirst/AsakusaSatellite.git
 $ cd AsakusaSatellite
 $ cp config/filter.yml.example config/filter.yml
 $ cp config/websocket.yml.example config/websocket.yml
@@ -138,8 +139,16 @@ $ cp config/settings.yml.example config/filter.yml
 $ bundle install --path vendor/bundle
 $ rake groonga:migrate
 $ ruby websocket/server &amp;
-$ rails server
+$ bundle exec rails server
 </pre>
+          <p style="margin-bottom:0;font-size:90%">注意事項</p>
+          <ul style="margin-top:0;font-size:90%">
+            <li>unsupported column エラーが発生する場合がありますが、問題ないので無視してください。</li>
+            <li>
+              MeCab がインストールされている環境では、正しく動作しない場合があります。
+              vendor/bundle 以下に groonga をインストールし直してください。
+            </li>
+          </ul>
         </div>
         <div class="block">
           <h3>リポジトリ</h3>
