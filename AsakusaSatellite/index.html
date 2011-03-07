@@ -137,7 +137,7 @@ $ cp config/filter.yml.example config/filter.yml
 $ cp config/websocket.yml.example config/websocket.yml
 $ cp config/settings.yml.example config/settings.yml
 $ bundle install --path vendor/bundle
-$ rake groonga:migrate
+$ bundle exec rake groonga:migrate
 $ ruby websocket/server.rb &amp;
 $ bundle exec rails server
 </pre>
