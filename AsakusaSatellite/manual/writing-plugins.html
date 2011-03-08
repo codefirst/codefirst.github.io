@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>プラグインの作成 &mdash; AsakusaSatellite v0.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AsakusaSatellite v0.2.0 documentation" href="index.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="プラグイン" href="plugin.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plugin.html" title="プラグイン"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">プラグインの作成</a><ul>
+<li><a class="reference internal" href="#id2">メッセージフィルタプラグイン</a><ul>
+<li><a class="reference internal" href="#id3">フィルタプラグイン生成コマンド</a></li>
+<li><a class="reference internal" href="#id4">フィルタの登録</a></li>
+<li><a class="reference internal" href="#id5">フィルタプログラム</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">ビューフック</a><ul>
+<li><a class="reference internal" href="#id7">ビューフックとは</a></li>
+<li><a class="reference internal" href="#id8">ビューフックリスナの作成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plugin.html"
+                        title="previous chapter">プラグイン</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="next chapter">API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/writing-plugins.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>プラグインの作成<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>メッセージフィルタプラグイン<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>フィルタプラグイン生成コマンド<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>ジェネレータが用意されています。</p>
+<div class="highlight-python"><pre>$ rails g as_filter フィルタ名</pre>
+</div>
+<p>とすることで vendor/plugins/as_フィルタ名_filter に以下に以下のように生成されます。</p>
+<ul class="simple">
+<li>init.rb: プラグインの初期設定</li>
+<li>lib/フィルタ名_filter.rb: フィルタプログラム</li>
+<li>spec/lib/フィルタ名_filter_spec.rb: フィルタのテスト</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>フィルタの登録<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>フィルタの登録は config/filter.yml で行います。</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">フィルタ名_filter</span>
+</pre></div>
+</div>
+<p>任意の名前で引数を与えることもできます。</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">フィルタ名_filter</span>
+  <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">xxx</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>フィルタプログラム<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>フィルタプログラムは AsakusaSatellite::Filter::Base を継承したクラスを作成し、
+process メソッドを実装します。
+(ジェネレータで生成した場合は lib/フィルタ名_filter.rb に生成されています。)
+フィルタ設定で与えた引数はAsakusaSatellite::Filter::Base を継承したクラスでは
+config 変数で保持しています。</p>
+<div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre> <span class="k">class</span> <span class="nc">XxxFilter</span> <span class="o">&lt;</span> <span class="no">AsakusaSatellite</span><span class="o">::</span><span class="no">Filter</span><span class="o">::</span><span class="no">Base</span>
+
+   <span class="c1"># メッセージを処理します</span>
+   <span class="c1"># text: メッセージの本文</span>
+   <span class="c1"># return: フィルタしたメッセージ</span>
+   <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+     <span class="sx">%[&lt;a target=&quot;_blank&quot; href=&quot;</span><span class="si">#{</span><span class="n">config</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="sx">&quot;&gt;</span><span class="si">#{</span><span class="n">text</span><span class="si">}</span><span class="sx">&lt;/a&gt;]</span>
+   <span class="k">end</span>
+
+ <span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>ビューフック<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>ビューフックとは<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>ビューフックは AsakusaSatellite のビュープログラムに
+あらかじめ設定されたフックポイントにプラグインからHTMLを
+埋め込んで画面を拡張する仕組みです。</p>
+<p>ビューフックを使用して画面を拡張するには AsakusaSatellite::Hook::Listener
+を継承したクラスを実装します。</p>
+<p>AsakusaSatellite::Hook::Listener を継承したクラスはRailsの起動時に読み込まれ、
+自動的に登録されます。</p>
+</div>
+<div class="section" id="id8">
+<h3>ビューフックリスナの作成<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>vendor/plugins/ 以下にプラグインフォルダを作成します。
+ここでは vendor/plugins/test_listener とします</p>
+<p>vendor/plugins/test_listener/lib を作成し、リスナクラスを実装します。</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TestListener</span> <span class="o">&lt;</span> <span class="no">AsakusaSatellite</span><span class="o">::</span><span class="no">Hook</span><span class="o">::</span><span class="no">Listener</span>
+
+  <span class="k">def</span> <span class="nf">message_buttons</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">context</span><span class="o">[</span><span class="ss">:message</span><span class="o">].</span><span class="n">body</span>
+      <span class="n">context</span><span class="o">[</span><span class="ss">:message</span><span class="o">].</span><span class="n">body</span><span class="o">.</span><span class="n">size</span><span class="o">.</span><span class="n">to_s</span> <span class="o">+</span> <span class="s2">&quot;文字&quot;</span>
+    <span class="k">else</span>
+      <span class="s2">&quot;0文字&quot;</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</pre></div>
+</div>
+<p>リスナクラスでAsakusaSatelliteに設置されているフックポイント名と同名の
+メソッドを実装します(上記の例ではmessage_buttons) 。引数(context)はビューフックから
+渡されてくるオブジェクトを保持するハッシュが渡されます。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plugin.html" title="プラグイン"
+             >previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, codefirst.org.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

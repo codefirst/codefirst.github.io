@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>セットアップ &mdash; AsakusaSatellite v0.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AsakusaSatellite v0.2.0 documentation" href="index.html" />
+    <link rel="next" title="基本機能" href="function.html" />
+    <link rel="prev" title="Welcome to AsakusaSatellite’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to AsakusaSatellite’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">セットアップ</a><ul>
+<li><a class="reference internal" href="#id2">動作環境</a></li>
+<li><a class="reference internal" href="#id3">インストール</a><ul>
+<li><a class="reference internal" href="#windows-os">Windows 以外の OS</a></li>
+<li><a class="reference internal" href="#passenger">Passenger</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">対応ブラウザ</a><ul>
+<li><a class="reference internal" href="#google-chrome">Google Chrome</a></li>
+<li><a class="reference internal" href="#safari">Safari</a></li>
+<li><a class="reference internal" href="#mozilla-firefox">Mozilla Firefox</a></li>
+<li><a class="reference internal" href="#opera">Opera</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to AsakusaSatellite&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="function.html"
+                        title="next chapter">基本機能</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/setup.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>セットアップ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>動作環境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>以下のソフトウェアのインストールが必要です。</p>
+<ul class="simple">
+<li>Ruby 1.8.7</li>
+<li>RubyGems 1.4.2 or later</li>
+<li>Bundler 1.0.7 or later</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>インストール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>以下では、3つの場合のインストール方法について説明します。</p>
+<ul class="simple">
+<li>Windows 以外の OS</li>
+<li>Passenger</li>
+<li>Windows</li>
+</ul>
+<div class="section" id="windows-os">
+<h3>Windows 以外の OS<a class="headerlink" href="#windows-os" title="Permalink to this headline">¶</a></h3>
+<p>以下のコマンドを実行してください。</p>
+<div class="highlight-python"><pre>$ git clone git://github.com/codefirst/AsakusaSatellite.git
+$ cd AsakusaSatellite
+$ cp config/filter.yml.example config/filter.yml
+$ cp config/websocket.yml.example config/websocket.yml
+$ cp config/settings.yml.example config/settings.yml
+$ bundle install --path vendor/bundle
+$ bundle exec rake groonga:migrate
+$ ruby websocket/server.rb &amp;
+$ bundle exec rails server</pre>
+</div>
+<p>注意事項</p>
+<ul class="simple">
+<li>unsupported column エラーが発生する場合がありますが、問題ないので無視してください。</li>
+<li>MeCab がインストールされている環境では、正しく動作しない場合があります。 vendor/bundle 以下に groonga をインストールし直してください。</li>
+</ul>
+</div>
+<div class="section" id="passenger">
+<h3>Passenger<a class="headerlink" href="#passenger" title="Permalink to this headline">¶</a></h3>
+<p>gem から passenger をインストールします。</p>
+<div class="highlight-python"><pre>$ gem install passenger</pre>
+</div>
+<p>Apacheモジュールをビルドします。</p>
+<div class="highlight-python"><pre>$ passenger-install-apache2-module</pre>
+</div>
+<p>Apacheの設定ファイルへの記述が表示されるのでメモを取ります。</p>
+<p>必要なパッケージのインストールを促された場合、
+指示にしたがってインストールの後再実行してください。</p>
+<p>例)</p>
+<div class="highlight-python"><pre>LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
+PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-2.2.11
+PassengerRuby /usr/bin/ruby1.8</pre>
+</div>
+<p>Apache への設定に以下を記述します。</p>
+<div class="highlight-python"><pre>RailsEnv production
+RailsBaseURI /as</pre>
+</div>
+<p>DocumentRoot に AsakusaSatellite の public ディレクトリへのシンボリックリンクを作成します。</p>
+<p>例)</p>
+<ul class="simple">
+<li>DocumentRoot が /var/www</li>
+<li>AsakusaSatellite が /var/AsakusaSatellite</li>
+</ul>
+<p>にインストールされている場合</p>
+<div class="highlight-python"><pre>$ cd /var/www
+$ sudo ln -s /var/AsakusaSatellite/public as</pre>
+</div>
+<p>AsakusaSatellite の WebSocket の設定を変更します。
+config/websocket.yml の &#8220;roots&#8221; の値を環境に応じて編集します。</p>
+<div class="highlight-python"><pre>roots: 0.0.0.0/as/</pre>
+</div>
+<p>Apacheの再起動の後、http://hostname/as でアクセスできるようになります。</p>
+</div>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p>以下の Ruby での動作を確認しています。</p>
+<ul class="simple">
+<li>Ruby 1.8.7 (<a class="reference external" href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>)</li>
+</ul>
+<p>また、以下のアドオンのインストールが必要です。</p>
+<ul class="simple">
+<li>DevKit (<a class="reference external" href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>)</li>
+</ul>
+<p>それ以外は、Windows 以外の OS の場合と同じです。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>対応ブラウザ<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>AsakusaSatellite は以下のブラウザをサポートしています。</p>
+<ul class="simple">
+<li>Google Chrome</li>
+</ul>
+<p>また、制限付きで以下のブラウザをサポートしています。</p>
+<ul class="simple">
+<li>Safari</li>
+<li>Mozilla Firefo</li>
+<li>Opera</li>
+</ul>
+<div class="section" id="google-chrome">
+<h3>Google Chrome<a class="headerlink" href="#google-chrome" title="Permalink to this headline">¶</a></h3>
+<p>すべての機能をご利用可能です。</p>
+</div>
+<div class="section" id="safari">
+<h3>Safari<a class="headerlink" href="#safari" title="Permalink to this headline">¶</a></h3>
+<p>以下の機能がご利用いただけません。</p>
+<ul class="simple">
+<li>デスクトップ通知</li>
+</ul>
+</div>
+<div class="section" id="mozilla-firefox">
+<h3>Mozilla Firefox<a class="headerlink" href="#mozilla-firefox" title="Permalink to this headline">¶</a></h3>
+<p>バージョン 4 からのサポートです。
+WebSocket を有効にするために、以下の設定を行ってください。</p>
+<ol class="arabic simple">
+<li>アドレスバーに &#8220;<a class="reference external" href="about:config">about:config</a>&#8221; と入力します。</li>
+<li>network.websocket.override-security-block の値を &#8220;true&#8221; に変更します。</li>
+</ol>
+<p>以下の機能がご利用いただけません。</p>
+<ul class="simple">
+<li>デスクトップ通知</li>
+</ul>
+</div>
+<div class="section" id="opera">
+<h3>Opera<a class="headerlink" href="#opera" title="Permalink to this headline">¶</a></h3>
+<p>バージョン 11 からのサポートです。
+WebSocket を有効にするために、以下の設定を行ってください。</p>
+<ol class="arabic simple">
+<li>アドレスバーに &#8220;<a class="reference external" href="about:config">about:config</a>&#8221; と入力します。</li>
+<li>&#8220;User Prefs&#8221; の &#8220;Enable WebSockets&#8221; をチェックします。</li>
+<li>&#8220;保存&#8221; をクリックします。</li>
+</ol>
+<p>以下の機能がご利用いただけません。</p>
+<ul class="simple">
+<li>デスクトップ通知</li>
+<li>ファイルアップロード</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to AsakusaSatellite’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, codefirst.org.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

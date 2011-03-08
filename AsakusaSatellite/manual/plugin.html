@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>プラグイン &mdash; AsakusaSatellite v0.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AsakusaSatellite v0.2.0 documentation" href="index.html" />
+    <link rel="next" title="プラグインの作成" href="writing-plugins.html" />
+    <link rel="prev" title="基本機能" href="function.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="writing-plugins.html" title="プラグインの作成"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">プラグイン</a><ul>
+<li><a class="reference internal" href="#redmine">Redmine 連携</a><ul>
+<li><a class="reference internal" href="#id2">機能</a></li>
+<li><a class="reference internal" href="#id3">設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">コードハイライト</a><ul>
+<li><a class="reference internal" href="#id5">機能</a></li>
+<li><a class="reference internal" href="#id6">設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id7">汎用リンク</a><ul>
+<li><a class="reference internal" href="#id8">機能</a></li>
+<li><a class="reference internal" href="#id9">設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#twitter">Twitter リンク</a><ul>
+<li><a class="reference internal" href="#id10">機能</a></li>
+<li><a class="reference internal" href="#id11">設定</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jenkins">Jenkins リンク</a><ul>
+<li><a class="reference internal" href="#id12">機能</a></li>
+<li><a class="reference internal" href="#id13">設定</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="function.html"
+                        title="previous chapter">基本機能</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="writing-plugins.html"
+                        title="next chapter">プラグインの作成</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/plugin.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>プラグイン<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="redmine">
+<h2>Redmine 連携<a class="headerlink" href="#redmine" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>機能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>#数字</strong> を Redmine のチケットへのリンクに変換します。
+API アクセスキーが設定されている場合は、チケットの名前を自動で付加します。
+また、メッセージの内容を Redmine に投稿するためのリンクを各メッセージに付加します。</p>
+</div>
+<div class="section" id="id3">
+<h3>設定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>config/filter.yml に以下を記述します</p>
+<div class="highlight-ruby"><pre>- name: redmine_ticket_link
+  roots: RedmineのルートURL
+  api_key: Redmine の個人設定 &gt; APIアクセスキー
+  project: デフォルトのプロジェクト識別子</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>コードハイライト<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>機能<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>ソースコードをハイライトします。
+記法は</p>
+<ul class="simple">
+<li>１行目に 言語::</li>
+<li>２行目以降にソースコードを記述します。</li>
+</ul>
+<p>例えば,</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">ruby</span><span class="o">::</span>
+<span class="nb">puts</span> <span class="s2">&quot;Hello World!&quot;</span>
+</pre></div>
+</div>
+<p>と記述することで、２行目がハイライトして表示されます。</p>
+</div>
+<div class="section" id="id6">
+<h3>設定<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>config/filter.yml に以下を記述します</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">code_highlight_filter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>汎用リンク<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>機能<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://">http://</a> <a class="reference external" href="https://">https://</a> で始まるURLをリンクに変換します。また、
+以下のサイトは画像として展開します。</p>
+<ul class="simple">
+<li>twitpic.com</li>
+<li>f.hatena.ne.jp</li>
+<li>movapic.com</li>
+<li>yflog.com</li>
+<li>ow.ly</li>
+<li>youtu.be</li>
+<li>img.ly</li>
+<li>plixi.com</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>設定<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>config/filter.yml に以下を記述します</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">auto_link</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="twitter">
+<h2>Twitter リンク<a class="headerlink" href="#twitter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>機能<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>メッセージ中の <strong>&#64;username</strong> をTwitterアカウントへのリンクに変換します。</p>
+</div>
+<div class="section" id="id11">
+<h3>設定<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>config/filter.yml に以下を記述します</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">twitter_link</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="jenkins">
+<h2>Jenkins リンク<a class="headerlink" href="#jenkins" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>機能<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>メッセージ中の <strong>::jenkins:{Job名}:{Job番号}</strong> を Jenkins へのリンクに変換します。</p>
+</div>
+<div class="section" id="id13">
+<h3>設定<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>config/filter.yml に以下を記述します</p>
+<div class="highlight-ruby"><pre>- name: jenkins_filter
+  roots: Jenkins の URL</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="writing-plugins.html" title="プラグインの作成"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             >previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, codefirst.org.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
