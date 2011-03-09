@@ -121,10 +121,11 @@ API アクセスキーが設定されている場合は、チケットの名前�
 <div class="section" id="id3">
 <h3>設定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>config/filter.yml に以下を記述します</p>
-<div class="highlight-ruby"><pre>- name: redmine_ticket_link
-  roots: RedmineのルートURL
-  api_key: Redmine の個人設定 &gt; APIアクセスキー
-  project: デフォルトのプロジェクト識別子</pre>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">redmine_ticket_link</span>
+  <span class="n">roots</span><span class="p">:</span> <span class="s2">&quot;Redmine のルート URL&quot;</span>
+  <span class="n">api_key</span><span class="p">:</span> <span class="s2">&quot;Redmine の個人設定 &gt; API アクセスキー&quot;</span>
+  <span class="n">project</span><span class="p">:</span> <span class="s2">&quot;チケット作成対象のプロジェクトの識別子&quot;</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -135,8 +136,8 @@ API アクセスキーが設定されている場合は、チケットの名前�
 <p>ソースコードをハイライトします。
 記法は</p>
 <ul class="simple">
-<li>１行目に 言語::</li>
-<li>２行目以降にソースコードを記述します。</li>
+<li>１行目に <strong>言語::</strong></li>
+<li>２行目以降に <strong>ソースコード</strong> を記述します。</li>
 </ul>
 <p>例えば,</p>
 <div class="highlight-ruby"><div class="highlight"><pre><span class="n">ruby</span><span class="o">::</span>
@@ -144,6 +145,13 @@ API アクセスキーが設定されている場合は、チケットの名前�
 </pre></div>
 </div>
 <p>と記述することで、２行目がハイライトして表示されます。</p>
+<p>また、Graphviz の dot 記法もサポートしています。</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">graphviz</span><span class="o">::</span>
+<span class="n">digraph</span><span class="p">{</span><span class="n">A</span><span class="o">-&gt;</span><span class="n">B</span><span class="o">-&gt;</span><span class="n">C</span><span class="o">-&gt;</span><span class="n">A</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>のように、 <strong>graphviz::</strong> に続けて dot 記法を記述することで
+簡単なグラフを描画することができます。</p>
 </div>
 <div class="section" id="id6">
 <h3>設定<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -201,8 +209,9 @@ API アクセスキーが設定されている場合は、チケットの名前�
 <div class="section" id="id13">
 <h3>設定<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>config/filter.yml に以下を記述します</p>
-<div class="highlight-ruby"><pre>- name: jenkins_filter
-  roots: Jenkins の URL</pre>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">jenkins_filter</span>
+  <span class="n">roots</span><span class="p">:</span> <span class="s2">&quot;Jenkins の URL&quot;</span>
+</pre></div>
 </div>
 </div>
 </div>

@@ -43,7 +43,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">API</a><ul>
-<li><a class="reference internal" href="#id1">復活の呪文</a></li>
+<li><a class="reference internal" href="#id1">API キー</a></li>
 <li><a class="reference internal" href="#bot">bot の作成例</a></li>
 </ul>
 </li>
@@ -80,12 +80,27 @@
             
   <div class="section" id="api">
 <h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>本章では、AsakusaSatellite が提供している API について説明します。
+外部のアプリケーションから、AsakusaSatellite に
+発言を投稿したり、発言を取得したりすることができます。</p>
 <div class="section" id="id1">
-<h2>復活の呪文<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<h2>API キー<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>API キーは、API を利用するために使用する認証用のキーです。
+キーを利用することで、AsakusaSatellite は
+ユーザを認証することができます。
+そのため、API キーは他人に渡してはいけません。</p>
+<p>API キーを取得するには、
+画面右上のログインユーザ名のリンクをクリックし、
+個人情報画面を開きます。</p>
+<img alt="_images/api_key2.png" src="_images/api_key2.png" />
+<p>画面に表示されているランダムな文字列が、
+ログインユーザを認証するための API キーです。</p>
+<p><strong>Generate</strong> ボタンをクリックすると再生成します。</p>
 </div>
 <div class="section" id="bot">
 <h2>bot の作成例<a class="headerlink" href="#bot" title="Permalink to this headline">¶</a></h2>
+<p>以下は、部屋番号と発言をコマンドラインオプションで指定して
+発言を行うプログラムの例です。</p>
 <div class="highlight-ruby"><div class="highlight"><pre><span class="c1">#! /user/bin/env ruby</span>
 <span class="c1"># -*- mode:ruby; coding:utf-8 -*-</span>
 
@@ -93,11 +108,8 @@
 <span class="c1"># example for bot</span>
 <span class="c1"># ------------------------------</span>
 
-<span class="c1"># Twitter&#39;s screen name</span>
-<span class="no">ScreenName</span> <span class="o">=</span> <span class="s2">&quot;AsaxaSatellite&quot;</span>
-
 <span class="c1"># Get from http://$AS_ROOT/account/index</span>
-<span class="no">Password</span>   <span class="o">=</span> <span class="s2">&quot;AsGklaaVMtMiVxx69OEsZfcma&quot;</span>
+<span class="no">ApiKey</span>   <span class="o">=</span> <span class="s2">&quot;YOUR_API_KEY&quot;</span>
 
 <span class="c1"># EntryPoint</span>
 <span class="no">EntryPoint</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:3000/api/v1&quot;</span>
@@ -114,15 +126,9 @@
 <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="no">EntryPoint</span><span class="p">)</span>
 
 <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">uri</span><span class="o">.</span><span class="n">port</span><span class="p">)</span> <span class="k">do</span><span class="o">|</span> <span class="n">http</span> <span class="o">|</span>
-  <span class="c1"># login</span>
-  <span class="n">session</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span>
-                     <span class="s2">&quot;/login?user=</span><span class="si">#{</span><span class="no">ScreenName</span><span class="si">}</span><span class="s2">&amp;password=</span><span class="si">#{</span><span class="no">Password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-  <span class="n">cookie</span>  <span class="o">=</span> <span class="n">session</span><span class="o">[</span><span class="s1">&#39;set-cookie&#39;</span><span class="o">].</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
-
   <span class="c1"># post message</span>
   <span class="nb">p</span> <span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/message&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;room_id=</span><span class="si">#{</span><span class="n">room_id</span><span class="si">}</span><span class="s2">&amp;message=</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-              <span class="s2">&quot;Cookie&quot;</span> <span class="o">=&gt;</span> <span class="n">cookie</span><span class="p">)</span>
+              <span class="s2">&quot;room_id=</span><span class="si">#{</span><span class="n">room_id</span><span class="si">}</span><span class="s2">&amp;message=</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&amp;api_key=</span><span class="si">#{</span><span class="no">ApyKey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 </div>
