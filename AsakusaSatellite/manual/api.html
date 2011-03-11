@@ -44,6 +44,12 @@
   <ul>
 <li><a class="reference internal" href="#">API</a><ul>
 <li><a class="reference internal" href="#id1">API キー</a></li>
+<li><a class="reference internal" href="#restful-api">RESTful API</a><ul>
+<li><a class="reference internal" href="#id2">メソッドについて</a></li>
+<li><a class="reference internal" href="#id3">発言の操作 API</a></li>
+<li><a class="reference internal" href="#id4">部屋の操作 API</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#bot">bot の作成例</a></li>
 </ul>
 </li>
@@ -92,10 +98,112 @@
 <p>API キーを取得するには、
 画面右上のログインユーザ名のリンクをクリックし、
 個人情報画面を開きます。</p>
-<img alt="_images/api_key.png" src="_images/api_key.png" />
+<img alt="_images/api_key22.png" src="_images/api_key22.png" />
 <p>画面に表示されているランダムな文字列が、
 ログインユーザを認証するための API キーです。</p>
 <p><strong>Generate</strong> ボタンをクリックすると再生成します。</p>
+</div>
+<div class="section" id="restful-api">
+<h2>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>メソッドについて<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>PUT 及び DELETE に対応していないブラウザでは、
+パラメータに <strong>_method=put</strong> または <strong>_method=delete</strong> を
+付加して POST することで同じ動作をさせることができます。</p>
+</div>
+<div class="section" id="id3">
+<h3>発言の操作 API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>発言の表示<ul>
+<li>URL: <strong>/api/v1/message/:id</strong><ul>
+<li><strong>:id</strong> (必須)  … メッセージの ID を指定します</li>
+</ul>
+</li>
+<li>メソッド: <strong>GET</strong></li>
+<li>パラメータ<ul>
+<li>なし</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>発言の作成<ul>
+<li>URL: <strong>/api/v1/message</strong></li>
+<li>メソッド: <strong>POST</strong></li>
+<li>パラメータ:<ul>
+<li><strong>room_id</strong> (必須)  … 発言を作成する対象となる部屋の ID を指定します</li>
+<li><strong>message</strong> (必須)  … 発言内容の文字列を指定します</li>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>発言の更新<ul>
+<li>URL: <strong>/api/v1/message/:id</strong><ul>
+<li><strong>:id</strong> (必須)  … 更新対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+</ul>
+</li>
+<li>メソッド: <strong>PUT</strong></li>
+<li>パラメータ:<ul>
+<li><strong>message</strong> (必須)  … 更新後の発言内容の文字列を指定します</li>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>発言の削除<ul>
+<li>URL: <strong>/api/v1/message/:id</strong><ul>
+<li><strong>:id</strong> (必須)  … 削除対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+</ul>
+</li>
+<li>メソッド: <strong>DELETE</strong></li>
+<li>パラメータ:<ul>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>部屋の操作 API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>部屋の作成<ul>
+<li>URL: <strong>/api/v1/room</strong></li>
+<li>メソッド: <strong>POST</strong></li>
+<li>パラメータ:<ul>
+<li><strong>name</strong> (必須)  … 作成する部屋の名前を指定します</li>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>部屋の更新<ul>
+<li>URL: <strong>/api/v1/room/:id</strong><ul>
+<li><strong>:id</strong> (必須)  … 名称を変更する部屋の ID を指定します</li>
+</ul>
+</li>
+<li>メソッド: <strong>PUT</strong></li>
+<li>パラメータ:<ul>
+<li><strong>name</strong> (必須)  … 変更後の部屋の名前を指定します</li>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>部屋の削除<ul>
+<li>URL: <strong>/api/v1/room/:id</strong><ul>
+<li><strong>:id</strong> (必須)  … 削除する部屋の ID を指定します</li>
+</ul>
+</li>
+<li>メソッド: <strong>DELETE</strong></li>
+<li>パラメータ:<ul>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="bot">
 <h2>bot の作成例<a class="headerlink" href="#bot" title="Permalink to this headline">¶</a></h2>

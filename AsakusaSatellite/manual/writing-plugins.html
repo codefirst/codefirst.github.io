@@ -47,7 +47,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">プラグインの作成</a><ul>
-<li><a class="reference internal" href="#id2">メッセージフィルタプラグイン</a><ul>
+<li><a class="reference internal" href="#id2">メッセージフィルタ</a><ul>
 <li><a class="reference internal" href="#id3">フィルタプラグイン生成コマンド</a></li>
 <li><a class="reference internal" href="#id4">フィルタの登録</a></li>
 <li><a class="reference internal" href="#id5">フィルタプログラム</a></li>
@@ -56,6 +56,7 @@
 <li><a class="reference internal" href="#id6">ビューフック</a><ul>
 <li><a class="reference internal" href="#id7">ビューフックとは</a></li>
 <li><a class="reference internal" href="#id8">ビューフックリスナの作成</a></li>
+<li><a class="reference internal" href="#id9">フックポイントの調べ方</a></li>
 </ul>
 </li>
 </ul>
@@ -96,8 +97,19 @@
             
   <div class="section" id="id1">
 <h1>プラグインの作成<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>AsakusaSatellite はプラグインを作成することにより、
+機能を拡張することができます。
+以下の二種類の拡張方法があります。</p>
+<dl class="docutils">
+<dt>メッセージフィルタ</dt>
+<dd>メッセージを変換するフィルタ機能を追加する拡張方法です。
+例えば、URL をリンクに変換することができます。</dd>
+<dt>ビューフック</dt>
+<dd>チャットページの決められた場所に、HTML を追加する拡張方法です。
+例えば、各発言に好きなボタンを追加することができます。</dd>
+</dl>
 <div class="section" id="id2">
-<h2>メッセージフィルタプラグイン<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>メッセージフィルタ<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
 <h3>フィルタプラグイン生成コマンド<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>ジェネレータが用意されています。</p>
@@ -112,7 +124,8 @@
 </div>
 <div class="section" id="id4">
 <h3>フィルタの登録<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>フィルタの登録は config/filter.yml で行います。</p>
+<p>フィルタの登録は config/filter.yml で行います。
+登録されたフィルタは、上から順番に適用されます。</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="p-Indicator">-</span> <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">フィルタ名_filter</span>
 </pre></div>
 </div>
@@ -129,27 +142,18 @@ process メソッドを実装します。
 (ジェネレータで生成した場合は lib/フィルタ名_filter.rb に生成されています。)
 フィルタ設定で与えた引数はAsakusaSatellite::Filter::Base を継承したクラスでは
 config 変数で保持しています。</p>
-<div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre> <span class="k">class</span> <span class="nc">XxxFilter</span> <span class="o">&lt;</span> <span class="no">AsakusaSatellite</span><span class="o">::</span><span class="no">Filter</span><span class="o">::</span><span class="no">Base</span>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="k">class</span> <span class="nc">XxxFilter</span> <span class="o">&lt;</span> <span class="no">AsakusaSatellite</span><span class="o">::</span><span class="no">Filter</span><span class="o">::</span><span class="no">Base</span>
 
-   <span class="c1"># メッセージを処理します</span>
-   <span class="c1"># text: メッセージの本文</span>
-   <span class="c1"># return: フィルタしたメッセージ</span>
-   <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-     <span class="sx">%[&lt;a target=&quot;_blank&quot; href=&quot;</span><span class="si">#{</span><span class="n">config</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="sx">&quot;&gt;</span><span class="si">#{</span><span class="n">text</span><span class="si">}</span><span class="sx">&lt;/a&gt;]</span>
-   <span class="k">end</span>
+  <span class="c1"># メッセージを処理します</span>
+  <span class="c1"># text: メッセージの本文</span>
+  <span class="c1"># return: フィルタしたメッセージ</span>
+  <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="sx">%[&lt;a target=&quot;_blank&quot; href=&quot;</span><span class="si">#{</span><span class="n">config</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="sx">&quot;&gt;</span><span class="si">#{</span><span class="n">text</span><span class="si">}</span><span class="sx">&lt;/a&gt;]</span>
+  <span class="k">end</span>
 
- <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 </div>
 <div class="section" id="id6">
@@ -185,6 +189,23 @@ config 変数で保持しています。</p>
 <p>リスナクラスでAsakusaSatelliteに設置されているフックポイント名と同名の
 メソッドを実装します(上記の例ではmessage_buttons) 。引数(context)はビューフックから
 渡されてくるオブジェクトを保持するハッシュが渡されます。</p>
+</div>
+<div class="section" id="id9">
+<h3>フックポイントの調べ方<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>フックポイントを調べるには、view の中で call_hook を呼んでいる
+箇所を検索することができます。
+具体的には、以下のコマンドが利用できます。</p>
+<div class="highlight-python"><pre>$ git grep call_hook app/views</pre>
+</div>
+<p>現在のバージョンでは、以下のフックポイントが有効です。</p>
+<dl class="docutils">
+<dt>chat_room_top</dt>
+<dd>チャットルームの上部に HTML を差し込みます</dd>
+<dt>chat_room_bottom</dt>
+<dd>チャットルームの下部に HTML を差し込みます</dd>
+<dt>message_buttons</dt>
+<dd>各発言のボタンが表示される箇所に HTML を差し込みます</dd>
+</dl>
 </div>
 </div>
 </div>
