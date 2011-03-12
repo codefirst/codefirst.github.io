@@ -48,6 +48,7 @@
 <li><a class="reference internal" href="#id2">メソッドについて</a></li>
 <li><a class="reference internal" href="#id3">発言の操作 API</a></li>
 <li><a class="reference internal" href="#id4">部屋の操作 API</a></li>
+<li><a class="reference internal" href="#id5">ユーザの操作 API</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bot">bot の作成例</a></li>
@@ -115,8 +116,9 @@
 <h3>発言の操作 API<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>発言の表示<ul>
-<li>URL: <strong>/api/v1/message/:id</strong><ul>
-<li><strong>:id</strong> (必須)  … メッセージの ID を指定します</li>
+<li>URL: <strong>/api/v1/message/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … メッセージの ID を指定します</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>GET</strong></li>
@@ -127,7 +129,10 @@
 </ul>
 </li>
 <li>発言の作成<ul>
-<li>URL: <strong>/api/v1/message</strong></li>
+<li>URL: <strong>/api/v1/message.format</strong><ul>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
+</ul>
+</li>
 <li>メソッド: <strong>POST</strong></li>
 <li>パラメータ:<ul>
 <li><strong>room_id</strong> (必須)  … 発言を作成する対象となる部屋の ID を指定します</li>
@@ -138,8 +143,9 @@
 </ul>
 </li>
 <li>発言の更新<ul>
-<li>URL: <strong>/api/v1/message/:id</strong><ul>
-<li><strong>:id</strong> (必須)  … 更新対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+<li>URL: <strong>/api/v1/message/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … 更新対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>PUT</strong></li>
@@ -151,8 +157,9 @@
 </ul>
 </li>
 <li>発言の削除<ul>
-<li>URL: <strong>/api/v1/message/:id</strong><ul>
-<li><strong>:id</strong> (必須)  … 削除対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+<li>URL: <strong>/api/v1/message/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … 削除対象の発言の ID を指定します。自分の発言のみが指定できます</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>DELETE</strong></li>
@@ -162,13 +169,42 @@
 </li>
 </ul>
 </li>
+<li>部屋の発言の取得<ul>
+<li>URL: <strong>/api/v1/room/show/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … 部屋の ID を指定します。</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
+</ul>
+</li>
+<li>メソッド: <strong>GET</strong></li>
+<li>パラメータ:<ul>
+<li><strong>until_id</strong> (任意)  … 発言を取得する基準となる ID を指定します。この ID よりも以前の発言が取得されます。指定しなければ最新の発言を取得します</li>
+<li><strong>count</strong> (任意) … 取得する発言の個数を指定します。指定しなければ、20個の発言を取得します</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="id4">
 <h3>部屋の操作 API<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li>部屋の一覧を取得<ul>
+<li>URL: <strong>/api/v1/room/list.format</strong><ul>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
+</ul>
+</li>
+<li>メソッド: <strong>GET</strong></li>
+<li>パラメータ:<ul>
+<li>なし</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>部屋の作成<ul>
-<li>URL: <strong>/api/v1/room</strong></li>
+<li>URL: <strong>/api/v1/room.format</strong><ul>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
+</ul>
+</li>
 <li>メソッド: <strong>POST</strong></li>
 <li>パラメータ:<ul>
 <li><strong>name</strong> (必須)  … 作成する部屋の名前を指定します</li>
@@ -178,8 +214,9 @@
 </ul>
 </li>
 <li>部屋の更新<ul>
-<li>URL: <strong>/api/v1/room/:id</strong><ul>
-<li><strong>:id</strong> (必須)  … 名称を変更する部屋の ID を指定します</li>
+<li>URL: <strong>/api/v1/room/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … 名称を変更する部屋の ID を指定します</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>PUT</strong></li>
@@ -191,11 +228,29 @@
 </ul>
 </li>
 <li>部屋の削除<ul>
-<li>URL: <strong>/api/v1/room/:id</strong><ul>
-<li><strong>:id</strong> (必須)  … 削除する部屋の ID を指定します</li>
+<li>URL: <strong>/api/v1/room/id.format</strong><ul>
+<li><strong>id</strong> (必須)  … 削除する部屋の ID を指定します</li>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>DELETE</strong></li>
+<li>パラメータ:<ul>
+<li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>ユーザの操作 API<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>ログインユーザ情報の取得<ul>
+<li>URL: <strong>/api/v1/user.format</strong><ul>
+<li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
+</ul>
+</li>
+<li>メソッド: <strong>GET</strong></li>
 <li>パラメータ:<ul>
 <li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
 </ul>
@@ -235,7 +290,7 @@
 
 <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">uri</span><span class="o">.</span><span class="n">port</span><span class="p">)</span> <span class="k">do</span><span class="o">|</span> <span class="n">http</span> <span class="o">|</span>
   <span class="c1"># post message</span>
-  <span class="nb">p</span> <span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/message&quot;</span><span class="p">,</span>
+  <span class="nb">p</span> <span class="n">http</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">uri</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/message.json&quot;</span><span class="p">,</span>
               <span class="s2">&quot;room_id=</span><span class="si">#{</span><span class="n">room_id</span><span class="si">}</span><span class="s2">&amp;message=</span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">&amp;api_key=</span><span class="si">#{</span><span class="no">ApyKey</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
