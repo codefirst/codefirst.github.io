@@ -49,6 +49,7 @@
 <li><a class="reference internal" href="#id3">発言の操作 API</a></li>
 <li><a class="reference internal" href="#id4">部屋の操作 API</a></li>
 <li><a class="reference internal" href="#id5">ユーザの操作 API</a></li>
+<li><a class="reference internal" href="#websocket-api">WebSocket API</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#bot">bot の作成例</a></li>
@@ -108,7 +109,7 @@
 <h2>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>メソッドについて<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>PUT 及び DELETE に対応していないブラウザでは、
+<p>PUT 及び DELETE に対応していないライブラリでは、
 パラメータに <strong>_method=put</strong> または <strong>_method=delete</strong> を
 付加して POST することで同じ動作をさせることができます。</p>
 </div>
@@ -122,7 +123,7 @@
 </ul>
 </li>
 <li>メソッド: <strong>GET</strong></li>
-<li>パラメータ<ul>
+<li>パラメータ:<ul>
 <li>なし</li>
 </ul>
 </li>
@@ -253,6 +254,41 @@
 <li>メソッド: <strong>GET</strong></li>
 <li>パラメータ:<ul>
 <li><strong>api_key</strong> (必須)  … ユーザの API キーを指定します</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="websocket-api">
+<h3>WebSocket API<a class="headerlink" href="#websocket-api" title="Permalink to this headline">¶</a></h3>
+<p>WebSocket サーバに接続することで、
+発言の追加や変更、削除のタイミングを知ることが出来ます。
+接続は WebSocket のプロトコルに対応したライブラリを利用してください。</p>
+<ul class="simple">
+<li>WebSocket サーバへの接続<ul>
+<li>URL: <strong>ws://hostname:port/</strong><ul>
+<li><strong>hostname</strong> … WebSocket のサーバのアドレスを指定します</li>
+<li><strong>port</strong> … WebSocket のサーバのポートを指定します。config/websocket.yml の <strong>websocketPort</strong> で設定します。デフォルトは <strong>18081</strong> です。</li>
+</ul>
+</li>
+<li>パラメータ:<ul>
+<li><strong>room_id</strong> (必須) … 部屋の ID を指定します。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>送信されるデータ<ul>
+<li>発言の作成<ul>
+<li>{ &#8220;event&#8221; : &#8216;create&#8217;, &#8220;content&#8221;: &#8220;&lt;message の JSON 形式&gt;&#8221; }</li>
+</ul>
+</li>
+<li>発言の変更<ul>
+<li>{ &#8220;event&#8221; : &#8216;update&#8217;, &#8220;content&#8221;: &#8220;&lt;message の JSON 形式&gt;&#8221; }</li>
+</ul>
+</li>
+<li>発言の削除<ul>
+<li>{ &#8220;event&#8221; : &#8216;delete&#8217;, &#8220;id&#8221;: &#8220;&lt;message の ID&gt;&#8221; }</li>
 </ul>
 </li>
 </ul>
