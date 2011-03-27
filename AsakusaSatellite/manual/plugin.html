@@ -72,6 +72,11 @@
 <li><a class="reference internal" href="#id13">設定</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id14">ローカル認証</a><ul>
+<li><a class="reference internal" href="#id15">機能</a></li>
+<li><a class="reference internal" href="#id16">設定</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -213,6 +218,45 @@ API アクセスキーが設定されている場合は、チケットの名前�
   <span class="n">roots</span><span class="p">:</span> <span class="s2">&quot;Jenkins の URL&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>ローカル認証<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>機能<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>AsakusaSatellite は Twitter の OAuth を用いて認証を行いますが、
+本プラグインを有効にすると、ローカルのユーザリストを用いた認証に切り替えます。</p>
+</div>
+<div class="section" id="id16">
+<h3>設定<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>&lt;AS_ROOT&gt;/config/settings.yml に以下を記述します。
+本設定を行うことにより、Twitter の OAuth による認証は無効になり、
+ローカル認証が有効になります。</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">login_link</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">hostname</span><span class="p">:</span><span class="mi">3000</span><span class="o">/</span><span class="n">localauth</span><span class="o">/</span><span class="n">login</span>
+</pre></div>
+</div>
+<p>次に、ユーザリストにユーザを追加します。
+ユーザリストは以下のファイルです。</p>
+<blockquote>
+<div>&lt;AS_ROOT&gt;/vendor/plugins/as_localauth_plugin/config/users.yml</div></blockquote>
+<p>内容は以下の形式です。</p>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="n">testuser1</span><span class="p">:</span>
+  <span class="n">screen_name</span><span class="p">:</span> <span class="no">Test</span> <span class="no">User1</span>
+  <span class="n">password</span><span class="p">:</span> <span class="n">b444ac06613fc8d63795be9ad0beaf55011936ac</span>
+  <span class="n">profile_image_url</span><span class="p">:</span> <span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">test1_user</span><span class="o">.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>ユーザリストは YAML 形式で記述します。</p>
+<p><strong>testuser1 の部分</strong> にはユーザ ID を記述します。</p>
+<p><strong>screen_name</strong> はユーザの表示名を記述します。</p>
+<p><strong>password</strong> にはパスワードの SHA-1 ハッシュを記述します。
+SHA-1 ハッシュの生成は、以下のコマンドで行うことができます。</p>
+<div class="highlight-sh"><div class="highlight"><pre><span class="nv">$ </span>ruby &lt;AS_ROOT&gt;/vendor/plugins/as_localauth_plugin/script/gen_sha1 &lt;PASSWORD&gt;
+</pre></div>
+</div>
+<p><strong>profile_image_url</strong> にはユーザのアイコンの URL を記述します。
+データ URI スキームも指定することもできます。
+testuser2 の例を参考にしてください。</p>
 </div>
 </div>
 </div>
