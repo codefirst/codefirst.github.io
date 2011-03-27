@@ -89,15 +89,16 @@ PUT 及び DELETE に対応していないライブラリでは、
 
 * 部屋の発言の取得
 
-  * URL: **/api/v1/room/show/id.format**
+  * URL: **/api/v1/message/list.format**
 
-    * **id** (必須)  … 部屋の ID を指定します。
+    * **room_id** (必須)  … 部屋の ID を指定します。
     * **format** (必須)  … 指定した形式で結果を返します。現在は **json** のみが有効です。
 
   * メソッド: **GET**
   * パラメータ:
 
     * **until_id** (任意)  … 発言を取得する基準となる ID を指定します。この ID よりも以前の発言が取得されます。指定しなければ最新の発言を取得します
+    * **since_id** (任意)  … 発言を取得する基準となる ID を指定します。この IDより後の発言が取得されます。指定しなければ最新の発言を取得します。 **until_id** とどちらか片方しか指定できません
     * **count** (任意) … 取得する発言の個数を指定します。指定しなければ、20個の発言を取得します
 
 部屋の操作 API
@@ -174,14 +175,14 @@ WebSocket サーバに接続することで、
 
 * WebSocket サーバへの接続
 
-  * URL: **ws://hostname:port/**
+  * URL: **ws://hostname:port/room**
 
     * **hostname** … WebSocket のサーバのアドレスを指定します
     * **port** … WebSocket のサーバのポートを指定します。config/websocket.yml の **websocketPort** で設定します。デフォルトは **18081** です。
 
   * パラメータ:
 
-    * **room_id** (必須) … 部屋の ID を指定します。
+    * **id** (必須) … 部屋の ID を指定します。
 
 * 送信されるデータ
 
@@ -195,7 +196,7 @@ WebSocket サーバに接続することで、
 
   * 発言の削除
 
-    * { "event" : 'delete', "id": "<message の ID>" }
+    * { "event" : 'delete', "content" : { "id": "<message の ID>" } }
 
 bot の作成例
 -----------------------

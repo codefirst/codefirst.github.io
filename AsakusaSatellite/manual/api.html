@@ -100,7 +100,7 @@
 <p>API キーを取得するには、
 画面右上のログインユーザ名のリンクをクリックし、
 個人情報画面を開きます。</p>
-<img alt="_images/api_key.png" src="_images/api_key.png" />
+<img alt="_images/api_key2.png" src="_images/api_key2.png" />
 <p>画面に表示されているランダムな文字列が、
 ログインユーザを認証するための API キーです。</p>
 <p><strong>Generate</strong> ボタンをクリックすると再生成します。</p>
@@ -171,14 +171,15 @@
 </ul>
 </li>
 <li>部屋の発言の取得<ul>
-<li>URL: <strong>/api/v1/room/show/id.format</strong><ul>
-<li><strong>id</strong> (必須)  … 部屋の ID を指定します。</li>
+<li>URL: <strong>/api/v1/message/list.format</strong><ul>
+<li><strong>room_id</strong> (必須)  … 部屋の ID を指定します。</li>
 <li><strong>format</strong> (必須)  … 指定した形式で結果を返します。現在は <strong>json</strong> のみが有効です。</li>
 </ul>
 </li>
 <li>メソッド: <strong>GET</strong></li>
 <li>パラメータ:<ul>
 <li><strong>until_id</strong> (任意)  … 発言を取得する基準となる ID を指定します。この ID よりも以前の発言が取得されます。指定しなければ最新の発言を取得します</li>
+<li><strong>since_id</strong> (任意)  … 発言を取得する基準となる ID を指定します。この IDより後の発言が取得されます。指定しなければ最新の発言を取得します。 <strong>until_id</strong> とどちらか片方しか指定できません</li>
 <li><strong>count</strong> (任意) … 取得する発言の個数を指定します。指定しなければ、20個の発言を取得します</li>
 </ul>
 </li>
@@ -268,13 +269,13 @@
 接続は WebSocket のプロトコルに対応したライブラリを利用してください。</p>
 <ul class="simple">
 <li>WebSocket サーバへの接続<ul>
-<li>URL: <strong>ws://hostname:port/</strong><ul>
+<li>URL: <strong>ws://hostname:port/room</strong><ul>
 <li><strong>hostname</strong> … WebSocket のサーバのアドレスを指定します</li>
 <li><strong>port</strong> … WebSocket のサーバのポートを指定します。config/websocket.yml の <strong>websocketPort</strong> で設定します。デフォルトは <strong>18081</strong> です。</li>
 </ul>
 </li>
 <li>パラメータ:<ul>
-<li><strong>room_id</strong> (必須) … 部屋の ID を指定します。</li>
+<li><strong>id</strong> (必須) … 部屋の ID を指定します。</li>
 </ul>
 </li>
 </ul>
@@ -289,7 +290,7 @@
 </ul>
 </li>
 <li>発言の削除<ul>
-<li>{ &#8220;event&#8221; : &#8216;delete&#8217;, &#8220;id&#8221;: &#8220;&lt;message の ID&gt;&#8221; }</li>
+<li>{ &#8220;event&#8221; : &#8216;delete&#8217;, &#8220;content&#8221; : { &#8220;id&#8221;: &#8220;&lt;message の ID&gt;&#8221; } }</li>
 </ul>
 </li>
 </ul>
