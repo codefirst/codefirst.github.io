@@ -1,0 +1,149 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>更新履歴 &mdash; AsakusaSatellite v0.2.0 documentation</title>
+    <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AsakusaSatellite v0.2.0 documentation" href="index.html" />
+    <link rel="prev" title="API" href="api.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">更新履歴</a><ul>
+<li><a class="reference internal" href="#v0-3-0-2011-04-01">v0.3.0(2011-04-01)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">API</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/changelog.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="id1">
+<h1>更新履歴<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-3-0-2011-04-01">
+<h2>v0.3.0(2011-04-01)<a class="headerlink" href="#v0-3-0-2011-04-01" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>機能追加: マニュアル作成</li>
+<li>機能追加: MITライセンスであることを明示</li>
+<li>機能追加: APIを追加 (参照: <a class="reference internal" href="api.html"><em>API</em></a> )</li>
+<li>機能追加: Graphvizプラグインを追加 (参照: <a class="reference internal" href="plugin.html#graphviz"><em>コードハイライト</em></a> )</li>
+<li>機能追加: 部屋ごとの設定ページを追加(参照: <a class="reference internal" href="function.html#room-conf"><em>部屋の設定変更</em></a>)</li>
+<li>機能追加: プラグインごとの設定ページを追加(参照: <a class="reference internal" href="function.html#room-conf"><em>部屋の設定変更</em></a>)</li>
+<li>機能追加: 認証機能のプラグイン化(参照: <a class="reference internal" href="plugin.html#localauth"><em>ローカル認証</em></a>)</li>
+<li>機能修正: 発言通知時に部屋名を一緒に出すように修正</li>
+<li>機能修正: 部屋の改名・削除をログインユーザ全員ができるように修正</li>
+<li>機能修正: 部屋名をタイトルに含めるように修正</li>
+<li>機能修正: 存在しない部屋をURLで直接指定した場合、404エラーを出すように修正</li>
+<li>機能修正: ブラウザ終了後もログイン状態を保持るように修正</li>
+<li>機能修正: Ubuntu/Windowsで動かない不具合を修正</li>
+<li>機能修正: APIから他人の発言を削除できる不具合を修正</li>
+<li>機能修正: Rails 3.1で廃止される機能を使わないようにコードを修正</li>
+<li>機能修正: Windows版のGoogle Chromeでアイコンがずれる不具合を修正</li>
+<li>機能修正: Opera用にCSSを修正</li>
+<li>機能修正: read moreで他の部屋のメッセージがとれてしまう不具合を修正</li>
+<li>機能修正: メッセージの個別ベーシ(&lt;AS_ROOT&gt;/message?id=xxx)で他の部屋のメッセージが表示させる不具合を修正</li>
+<li>機能修正: codefirst.org上の画像を参照したいた不具合を修正</li>
+<li>機能修正: 発言のないページでJavascriptエラーがでる不具合を修正</li>
+<li>機能修正: 削除した部屋をURLで直接指定すると表示できてしまう不具合を修正</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             >previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite v0.2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, codefirst.org.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15522812-4']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+  </body>
+</html>
