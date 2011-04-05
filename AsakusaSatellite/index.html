@@ -2,6 +2,8 @@
 <html lang="ja">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="開発者のためのリアルタイムチャットアプリケーション AsakusaSatellite の配布ページです">
+    <meta name="keywords" content="チャットアプリケーション,Rails,WebSocket">
     <title>AsakusaSatellite | 開発者向けリアルタイムチャットアプリケーション</title>
     <link href="imgs/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
@@ -129,9 +131,9 @@ var _gaq = _gaq || [];
         </div>
         <div class="block">
           <h3>インストール</h3>
-          <p>以下のコマンドを実行した後 <a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしてください。</p>
+          <p><a href="https://github.com/codefirst/AsakusaSatellite/archives/master">ダウンロードページ</a> から最新版をダウンロードし、展開してください。</a>展開したディレクトリを AsakusaSatellite にリネームし、
+    以下のコマンドを実行してください。</p>
           <pre>
-$ git clone git://github.com/codefirst/AsakusaSatellite.git
 $ cd AsakusaSatellite
 $ cp config/filter.yml.example config/filter.yml
 $ cp config/websocket.yml.example config/websocket.yml
@@ -149,6 +151,7 @@ $ bundle exec rails server
               vendor/bundle 以下に groonga をインストールし直してください。
             </li>
           </ul>
+          <p>インストールが完了したら <a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしてください。</p>
         </div>
         <div class="block">
           <h3>リポジトリ</h3>
