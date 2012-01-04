@@ -131,26 +131,22 @@ var _gaq = _gaq || [];
         </div>
         <div class="block">
           <h3>インストール</h3>
-          <p><a href="https://github.com/codefirst/AsakusaSatellite/archives/master">ダウンロードページ</a> から最新版をダウンロードし、展開してください。</a>展開したディレクトリを AsakusaSatellite にリネームし、
+          <p><a href="https://github.com/codefirst/AsakusaSatellite/tags">ダウンロードページ</a> から最新版をダウンロードし、展開してください。</a>展開したディレクトリを AsakusaSatellite にリネームし、
     以下のコマンドを実行してください。</p>
           <pre>
 $ cd AsakusaSatellite
-$ cp config/filter.yml.example config/filter.yml
-$ cp config/websocket.yml.example config/websocket.yml
-$ cp config/settings.yml.example config/settings.yml
+
+# 依存ライブラリのインストール
 $ bundle install --path vendor/bundle
-$ bundle exec rake groonga:migrate
-$ ruby websocket/server.rb &amp;
+
+# MongoDBとSockyの起動
+$ mongod --dbpath <dir_name>
+$ bundle exec thin -R socky/config.ru -p3002 start
+
+# AsakusaSatelliteの起動
 $ bundle exec rails server
 </pre>
-          <p style="margin-bottom:0;font-size:90%">注意事項</p>
-          <ul style="margin-top:0;font-size:90%">
-            <li>unsupported column エラーが発生する場合がありますが、問題ないので無視してください。</li>
-            <li>
-              MeCab がインストールされている環境では、正しく動作しない場合があります。
-              vendor/bundle 以下に groonga をインストールし直してください。
-            </li>
-          </ul>
+
           <p>インストールが完了したら <a href="http://localhost:3000/">http://localhost:3000/</a> にアクセスしてください。</p>
         </div>
         <div class="block">
@@ -180,6 +176,8 @@ $ bundle exec rails server
             <li><a href="http://twitter.com/mallowlabs">@mallowlabs</a></li>
             <li><a href="http://twitter.com/suer">@suer</a></li>
             <li><a href="http://twitter.com/mzp">@mzp</a></li>
+            <li><a href="http://twitter.com/shimomura1004">@shimomura1004</a></li>
+            <li><a href="http://twitter.com/banjun">@banjun</a></li>
           </ul>
         </div>
     </div>
