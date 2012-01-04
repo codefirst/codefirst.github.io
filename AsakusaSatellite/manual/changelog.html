@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>更新履歴 &mdash; AsakusaSatellite v0.3.0 documentation</title>
+    <title>更新履歴 &mdash; AsakusaSatellite 0.7.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.0',
+        VERSION:     '0.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="AsakusaSatellite v0.3.0 documentation" href="index.html" />
+    <link rel="top" title="AsakusaSatellite 0.7.0 documentation" href="index.html" />
     <link rel="prev" title="API" href="api.html" /> 
   </head>
   <body>
@@ -35,7 +38,7 @@
         <li class="right" >
           <a href="api.html" title="API"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite v0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -43,6 +46,10 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">更新履歴</a><ul>
+<li><a class="reference internal" href="#v0-7-2011-12-24">v0.7(2011-12-24)</a></li>
+<li><a class="reference internal" href="#v0-6">v0.6(欠番)</a></li>
+<li><a class="reference internal" href="#v0-5">v0.5(内部リリースのみ)</a></li>
+<li><a class="reference internal" href="#v0-4">v0.4(欠番)</a></li>
 <li><a class="reference internal" href="#v0-3-0-2011-04-01">v0.3.0(2011-04-01)</a></li>
 </ul>
 </li>
@@ -59,7 +66,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -79,6 +86,36 @@
             
   <div class="section" id="id1">
 <h1>更新履歴<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v0-7-2011-12-24">
+<h2>v0.7(2011-12-24)<a class="headerlink" href="#v0-7-2011-12-24" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>機能追加: iPhone通知、Android通知プラグイン追加</li>
+<li>機能追加: WebSocketサーバを設定可能に</li>
+<li>機能追加: QuoteItプラグイン追加</li>
+<li>機能追加: RedmineAuthプラグイン追加</li>
+<li>機能追加: 自動テストを guard + spork ベースに変更</li>
+<li>機能追加: Rails 3.1に対応。</li>
+<li>機能修正: フィルタプラグインの競合を防ぐため、処理対象をテキストからDOMに変更</li>
+</ul>
+</div>
+<div class="section" id="v0-6">
+<h2>v0.6(欠番)<a class="headerlink" href="#v0-6" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="v0-5">
+<h2>v0.5(内部リリースのみ)<a class="headerlink" href="#v0-5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>機能追加: 非公開の部屋作成を追加</li>
+<li>機能追加: 使用DBをMongoDBへと変更</li>
+<li>機能追加: herokuでの動作に対応</li>
+<li>機能修正: コードハイライト時のフォントを等幅フォントに修正</li>
+<li>機能修正: 部屋ごとに検索フォームを追加</li>
+<li>機能修正: メッセージの編集後、OKボタンを非アクティブにするように修正</li>
+<li>不具合修正: メッセージがひとつもない部屋で readmore を押すとエラーがでる不具合を修正</li>
+</ul>
+</div>
+<div class="section" id="v0-4">
+<h2>v0.4(欠番)<a class="headerlink" href="#v0-4" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="v0-3-0-2011-04-01">
 <h2>v0.3.0(2011-04-01)<a class="headerlink" href="#v0-3-0-2011-04-01" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -89,7 +126,7 @@
 <li>機能追加: Graphvizプラグインを追加 (参照: <a class="reference internal" href="plugin.html#graphviz"><em>コードハイライト</em></a> )</li>
 <li>機能追加: 部屋ごとの設定ページを追加(参照: <a class="reference internal" href="function.html#room-conf"><em>部屋の設定変更</em></a>)</li>
 <li>機能追加: プラグインごとの設定ページを追加(参照: <a class="reference internal" href="function.html#room-conf"><em>部屋の設定変更</em></a>)</li>
-<li>機能追加: 認証機能のプラグイン化(参照: <a class="reference internal" href="plugin.html#localauth"><em>ローカル認証</em></a>)</li>
+<li>機能追加: 認証機能のプラグイン化(参照: <a class="reference internal" href="plugin.html#localauth"><em>QuoteItプラグイン</em></a>)</li>
 <li>機能追加: MITライセンスであることを明示</li>
 <li>機能修正: Rails本体とWebsokectサーバの通信方法をHttpからMessagePack-RPCに変更</li>
 <li>機能修正: 発言通知時に部屋名を一緒に出すように修正</li>
@@ -124,13 +161,13 @@
         <li class="right" >
           <a href="api.html" title="API"
              >previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite v0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
 
     <div class="footer">
         &copy; Copyright 2011, codefirst.org.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
 <script type="text/javascript">
 var _gaq = _gaq || [];

@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WebSocketサーバの変更 &mdash; AsakusaSatellite 0.7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AsakusaSatellite 0.7.0 documentation" href="index.html" />
+    <link rel="next" title="プラグイン" href="plugin.html" />
+    <link rel="prev" title="基本機能" href="function.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="plugin.html" title="プラグイン"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">WebSocketサーバの変更</a><ul>
+<li><a class="reference internal" href="#socky">Socky</a><ul>
+<li><a class="reference internal" href="#id1">設定方法</a></li>
+<li><a class="reference internal" href="#id2">利点・欠点</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pusher">Pusher</a><ul>
+<li><a class="reference internal" href="#id3">設定方法</a></li>
+<li><a class="reference internal" href="#id4">利点・欠点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="function.html"
+                        title="previous chapter">基本機能</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plugin.html"
+                        title="next chapter">プラグイン</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/websocket.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="websocket">
+<h1>WebSocketサーバの変更<a class="headerlink" href="#websocket" title="Permalink to this headline">¶</a></h1>
+<p>config/message_pusher.yml により、AsakusaSatelliteで利用するWebSocketサーバを変更できます。</p>
+<p>現時点ではSocky, Pusher の2方式をサポートしています。</p>
+<div class="section" id="socky">
+<h2>Socky<a class="headerlink" href="#socky" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>設定方法<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>デフォルト設定のため特に設定せずに利用できます。</p>
+</div>
+<div class="section" id="id2">
+<h3>利点・欠点<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>外部サービスを利用せずに動作するため、社内での利用等に適しています。</p>
+<p>ただし、WebSocket以外の通信方式には対応していません。</p>
+</div>
+</div>
+<div class="section" id="pusher">
+<h2>Pusher<a class="headerlink" href="#pusher" title="Permalink to this headline">¶</a></h2>
+<p>Pusher ( <a class="reference external" href="http://pusher.com">http://pusher.com</a> ) を利用して通信します。</p>
+<div class="section" id="id3">
+<h3>設定方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pusher.com">http://pusher.com</a> に登録して、app_id, key, secretを取得します。</p>
+<p>config/message_pusher.yml を以下のように編集します。</p>
+<div class="highlight-python"><pre>default: pusher
+
+engines:
+  # pusherの設定
+  pusher:
+    app_id: &lt;your app id&gt;
+    key:    &lt;your key&gt;
+    secret: &lt;your secret&gt;</pre>
+</div>
+<p>AsakusaSatellite を再起動することで設定が反映されます。</p>
+</div>
+<div class="section" id="id4">
+<h3>利点・欠点<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>有料プランを利用すれば多数のユーザの同時使用にも耐えることができます。 また、WebSocketだけでなくFlashSocketによる接続も可能なため、WebSocket非対応のブラウザからも利用できます。</p>
+<p>ただし、外部サービスを利用するため、社内での利用等には向きません。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="plugin.html" title="プラグイン"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="function.html" title="基本機能"
+             >previous</a> |</li>
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+    <div class="footer">
+        &copy; Copyright 2011, codefirst.org.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15522812-4']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+  </body>
+</html>

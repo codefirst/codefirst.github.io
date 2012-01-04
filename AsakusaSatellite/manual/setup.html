@@ -3,17 +3,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>セットアップ &mdash; AsakusaSatellite v0.3.0 documentation</title>
+    <title>セットアップ &mdash; AsakusaSatellite 0.7.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.3.0',
+        VERSION:     '0.7.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="AsakusaSatellite v0.3.0 documentation" href="index.html" />
+    <link rel="top" title="AsakusaSatellite 0.7.0 documentation" href="index.html" />
     <link rel="next" title="基本機能" href="function.html" />
     <link rel="prev" title="Welcome to AsakusaSatellite’s documentation!" href="index.html" /> 
   </head>
@@ -39,7 +42,7 @@
         <li class="right" >
           <a href="index.html" title="Welcome to AsakusaSatellite’s documentation!"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite v0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -49,8 +52,8 @@
 <li><a class="reference internal" href="#">セットアップ</a><ul>
 <li><a class="reference internal" href="#id2">動作環境</a></li>
 <li><a class="reference internal" href="#id3">インストール</a><ul>
-<li><a class="reference internal" href="#windows-os">Windows 以外の OS</a></li>
-<li><a class="reference internal" href="#passenger">Passenger</a></li>
+<li><a class="reference internal" href="#windowsos">Windows以外のOS(単体起動)</a></li>
+<li><a class="reference internal" href="#windowsos-passengerapache">Windows以外のOS(PassengerによるApacheとの連携)</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
@@ -79,7 +82,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -106,38 +109,38 @@
 <li>Ruby 1.8.7</li>
 <li>RubyGems 1.4.2 or later</li>
 <li>Bundler 1.0.7 or later</li>
+<li>MongoDB 1.8.1 or later</li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h2>インストール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>以下では、3つの場合のインストール方法について説明します。</p>
 <ul class="simple">
-<li>Windows 以外の OS</li>
-<li>Passenger</li>
+<li>Windows以外のOS(単体起動)</li>
+<li>Windows以外のOS(PassengerによるApacheとの連携)</li>
 <li>Windows</li>
 </ul>
-<div class="section" id="windows-os">
-<h3>Windows 以外の OS<a class="headerlink" href="#windows-os" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="windowsos">
+<h3>Windows以外のOS(単体起動)<a class="headerlink" href="#windowsos" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="http://github.com/codefirst/AsakusaSatellite/archives/master">ダウンロードリンク</a> から最新版をダウンロードし、適当なディレクトリに展開してください。
 展開したディレクトリを AsakusaSatellite にリネームし、以下のコマンドを実行してください。</p>
-<div class="highlight-python"><pre>$ cd AsakusaSatellite
-$ cp config/filter.yml.example config/filter.yml
-$ cp config/websocket.yml.example config/websocket.yml
-$ cp config/settings.yml.example config/settings.yml
+<div class="highlight-python"><pre># MongoDBの起動(起動済みの場合は不要)
+$ mongod --dbpath &lt;dir_name&gt;
+
+# 展開ディレクトリへの移動
+$ cd AsakusaSatellite
+
+# 依存ライブラリのインストール
 $ bundle install --path vendor/bundle
-$ bundle exec rake groonga:migrate
-$ ruby websocket/server.rb &amp;
+
+# WebSocketサーバ、AsakusaSatellite本体の起動
+$ bundle exec thin -R socky/config.ru -p3002 start &amp;
 $ bundle exec rails server</pre>
 </div>
-<p>注意事項</p>
-<ul class="simple">
-<li>unsupported column エラーが発生する場合がありますが、問題ないので無視してください。</li>
-<li>MeCab がインストールされている環境では、正しく動作しない場合があります。 vendor/bundle 以下に groonga をインストールし直してください。</li>
-</ul>
 </div>
-<div class="section" id="passenger">
-<h3>Passenger<a class="headerlink" href="#passenger" title="Permalink to this headline">¶</a></h3>
-<p>gem から passenger をインストールします。</p>
+<div class="section" id="windowsos-passengerapache">
+<h3>Windows以外のOS(PassengerによるApacheとの連携)<a class="headerlink" href="#windowsos-passengerapache" title="Permalink to this headline">¶</a></h3>
+<p>gem から Passenger をインストールします。</p>
 <div class="highlight-python"><pre>$ gem install passenger</pre>
 </div>
 <p>Apacheモジュールをビルドします。</p>
@@ -164,10 +167,6 @@ RailsBaseURI /as</pre>
 <p>にインストールされている場合</p>
 <div class="highlight-python"><pre>$ cd /var/www
 $ sudo ln -s /var/AsakusaSatellite/public as</pre>
-</div>
-<p>AsakusaSatellite の WebSocket の設定を変更します。
-config/websocket.yml の &#8220;roots&#8221; の値を環境に応じて編集します。</p>
-<div class="highlight-python"><pre>roots: localhost/as/</pre>
 </div>
 <p>Apacheの再起動の後、http://hostname/as でアクセスできるようになります。</p>
 </div>
@@ -256,13 +255,13 @@ WebSocket を有効にするために、以下の設定を行ってください�
         <li class="right" >
           <a href="index.html" title="Welcome to AsakusaSatellite’s documentation!"
              >previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite v0.3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
 
     <div class="footer">
         &copy; Copyright 2011, codefirst.org.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
 <script type="text/javascript">
 var _gaq = _gaq || [];
