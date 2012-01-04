@@ -143,7 +143,7 @@ $ cd AsakusaSatellite
 $ bundle install --path vendor/bundle
 
 # MongoDBとSockyの起動
-$ mongod --dbpath <dir_name>
+$ mongod --dbpath /path/to/db
 $ bundle exec thin -R socky/config.ru -p3002 start
 
 # AsakusaSatelliteの起動
