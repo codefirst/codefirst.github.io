@@ -112,6 +112,18 @@ h4 {
     display: inline-block;
 }
 
+.committer .icon {
+    width:24px;
+    height:24px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.committer .icon img {
+    width:24px;
+    height:24px;
+}
+
 .about {
     display: inline-block;
     width: 550px;
