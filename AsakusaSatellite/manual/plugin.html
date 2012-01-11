@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>プラグイン &mdash; AsakusaSatellite 0.7.0 documentation</title>
-    
+    <title>プラグイン &mdash; AsakusaSatellite v0.7.0 documentation</title>
     <link rel="stylesheet" href="_static/codefirst.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -25,7 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="AsakusaSatellite 0.7.0 documentation" href="index.html" />
+    <link rel="top" title="AsakusaSatellite v0.7.0 documentation" href="index.html" />
     <link rel="next" title="プラグインの作成" href="writing-plugins.html" />
     <link rel="prev" title="WebSocketサーバの変更" href="websocket.html" /> 
   </head>
@@ -42,7 +39,7 @@
         <li class="right" >
           <a href="websocket.html" title="WebSocketサーバの変更"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite v0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -104,7 +101,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" size="18" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -136,11 +133,10 @@ API アクセスキーが設定されている場合は、チケットの名前�
 <h3>設定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>config/filter.yml に以下を記述します</p>
 <div class="highlight-ruby"><div class="highlight"><pre><span class="o">-</span> <span class="nb">name</span><span class="p">:</span> <span class="n">redmine_ticket_link</span>
-  <span class="n">roots</span><span class="p">:</span> <span class="s2">&quot;Redmine のルート URL&quot;</span>
-  <span class="n">api_key</span><span class="p">:</span> <span class="s2">&quot;Redmine の個人設定 &gt; API アクセスキー&quot;</span>
 </pre></div>
 </div>
-<p>また部屋の設定画面からチケットを作成するプロジェクトを指定できます。</p>
+<p>また部屋の設定画面からRedmineのルートURL、APIアクセスキー、チケットを作成するプロジェクトを指定できます。
+APIアクセスキーはRedmineの&#8221;個人設定 &gt; API アクセスキー&#8221;から確認できます。</p>
 <img alt="_images/redmine_config.png" src="_images/redmine_config.png" />
 </div>
 </div>
@@ -312,13 +308,13 @@ testuser2 の例を参考にしてください。</p>
         <li class="right" >
           <a href="websocket.html" title="WebSocketサーバの変更"
              >previous</a> |</li>
-        <li><a href="index.html">AsakusaSatellite 0.7.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">AsakusaSatellite v0.7.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
 
     <div class="footer">
         &copy; Copyright 2011, codefirst.org.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
 <script type="text/javascript">
 var _gaq = _gaq || [];
