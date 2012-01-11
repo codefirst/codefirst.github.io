@@ -145,7 +145,7 @@ $ bundle install --path vendor/bundle
 
 # MongoDBとSockyの起動
 $ mongod --dbpath /path/to/db
-$ bundle exec thin -R socky/config.ru -p3002 start
+$ bundle exec thin -R socky/config.ru -p3002 -t0 start
 
 # AsakusaSatelliteの起動
 $ bundle exec rails server
