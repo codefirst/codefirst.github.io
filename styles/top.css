@@ -1,0 +1,54 @@
+h4 {
+   border-bottom: 1px solid #eee;
+}
+.main-img-container {
+   position:relative;
+}
+.main-img-container img {
+   width:920px;
+   height:288px;
+}
+.main-img {
+   border-radius: 5px 5px 5px 5px;
+   -webkit-border-radius: 5px 5px 5px 5px;
+   box-shadow: 1px 1px 2px #999;
+   -webkit-box-shadow: 1px 1px 2px #999;
+}
+.excuse {
+   color:white;
+   position:absolute;
+   top:0px;
+   left:40px;
+   font-size:30px;
+   text-shadow: 1px 1px 1px #777;
+}
+.paragraph {
+   width: 300px;
+   float: left;
+   margin-right: 10px;
+}
+.paragraph p {
+   font-size: 14px;
+}
+.paragraph ul {
+   border-left: 1px solid #eee;
+   padding-left: 15px;
+}
+.paragraph li {
+   list-style: none;
+}
+.paragraph li a {
+   text-decoration: none;
+   color: #777;
+}
+.paragraph li a:hover {
+   text-decoration: underline;
+   color: #777;
+}
+.paragraph-last {
+   margin-right: 0;
+}
+
+.footer {
+   margin-top: 30px;
+}
