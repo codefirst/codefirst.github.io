@@ -18,39 +18,30 @@ h4 {
 .excuse {
    color:white;
    position:absolute;
-   top:0px;
+   top:35px;
    left:40px;
-   font-size:30px;
    text-shadow: 1px 1px 1px #777;
 }
-.paragraph {
-   width: 300px;
-   float: left;
-   margin-right: 10px;
+
+.excuse p {
+   font-size:30px;
 }
-.paragraph p {
-   font-size: 14px;
+
+.page ul {
+    margin-left: 0;
+    padding-left: 0;
 }
-.paragraph ul {
-   padding-left: 0px;
+
+.page li {
+    list-style: none;
+    background: url(../imgs/li.png) no-repeat 0 0.25em;
+    padding-left: 20px;
 }
-.paragraph li {
-   list-style: none;
-   background: url(../imgs/li.png) no-repeat 0 0.25em;
-   padding-left: 20px;
-}
-.paragraph li a {
+.page li a {
    text-decoration: none;
    color: #777;
 }
-.paragraph li a:hover {
+.page li a:hover {
    text-decoration: underline;
    color: #777;
-}
-.paragraph-last {
-   margin-right: 0;
-}
-
-.footer {
-   margin-top: 30px;
 }

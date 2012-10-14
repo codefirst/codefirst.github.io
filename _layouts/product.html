@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="{{page.description | strip_newlines}}">
+    <meta name="keywords" content="{{page.keywords | join:','}}">
+    <link rel="canonical" href="{{ page.canonical_url }}">
+    <link href="./imgs/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="../styles/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="../styles/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="../styles/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+    <link href="/styles/product.css" rel="stylesheet" type="text/css">
+
+    {% for stylesheet in page.stylesheets %}
+    <link href="{{stylesheet}}" rel="stylesheet" type="text/css">
+    {% endfor %}
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15522812-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      {lang: 'ja'}
+    </script>
+    <title>{{page.title}} | {{ page.subtitle }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="summary">
+        <div class="logo">
+          <h1 class="title">{{ page.title }}</h1>
+          <h2 class="title">{{ page.subtitle }} </h2>
+        </div>
+        <div class="navigator">
+          <ul>
+            <li><a href="/">トップ</a></li>
+            <li><a href="/product.html">プロダクト</a></li>
+            <li><a href="/member.html">メンバー</a></li>
+            <li><a href="http://blog.codefirst.org/">ブログ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="social">
+        <div class="twitter">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{page.canonical_url}}" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        </div>
+        <div class="hatena" style="width: 68px">
+          <a href="http://b.hatena.ne.jp/entry/{{ page.canonical_url }}" class="hatena-bookmark-button" data-hatena-bookmark-title="{{page.title}} | {{page.subtitle}}" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </div>
+        <div class="facebook">
+          <iframe src="http://www.facebook.com/plugins/like.php?href={{ page.canonical_url | cgi_escape }}&amp;layout=button_count&amp;show_faces=false&amp;width=110&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+        <div class="googleplus">
+          <g:plusone size="medium"></g:plusone>
+        </div>
+      </div>
+
+      <div class="page {{page.name}}">
+        <div>
+          <h3>{{ page.title }} とは</h3>
+          <p>{{ page.description }}</p>
+          <div class="span-24">
+            <div class="span-12 main-image">
+              <img src="imgs/ss_all.png" />
+            </div>
+            <div class="copy span-12 last">
+              {{ page.copy | newline_to_br }}
+            </div>
+          </div>
+          <div class="feature span-24">
+            <h3>主な特徴</h3>
+            {% for feature in page.features %}
+            <div class="span-12 {% cycle '', 'last' %}">
+              <h4>{{ feature.name }}</h4>
+              <div><img class="ss" src="{{ feature.image }}" /></div>
+            </div>
+            {% endfor %}
+          </div>
+          {{ content }}
+
+          <h3>レポジトリ</h3>
+          <ul>
+            <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
+          </ul>
+
+          <h3>要望の出し方・開発への参加方法</h3>
+          <p><a href="https://github.com/codefirst/{{ page.github_project }}/issues">Github issues</a>に登録してください。 pull requestも歓迎します。</p>
+
+          <h3>コミッタ</h3>
+          <ul>
+            {% for c in page.commiters %}
+            <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="credits">
+        <p>Copyright (C) 2011-2012 <a href="http://www.codefirst.org">codefirst.org</a>, All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

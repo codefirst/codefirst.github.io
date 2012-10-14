@@ -1,0 +1,33 @@
+.header h1{
+   margin-left: -9999px;
+}
+.header {
+   background-image: url(imgs/logo.png);
+   background-repeat: no-repeat;
+   padding-bottom: 5px;
+}
+
+.main-image {
+   text-align: center;
+}
+
+img.ss {
+  width: 95%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-border-radius: 10px;
+  margin-bottom: 10px;
+}
+.feature ul li{
+  list-style-type: none;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 125px;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: serif;
+  color: #555;
+  text-shadow: 4px 4px 3px #999;
+}

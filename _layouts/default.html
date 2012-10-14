@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="{{page.description | strip_newlines}}">
+    <meta name="keywords" content="{{page.keywords | join:','}}">
+    <meta name="google-site-verification" content="TCzB62RDAoVhpsxKgzjd760uASiR7rz7MdqE9SyNGqo" />
+    <link rel="canonical" href="{{ page.canonical_url }}">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="styles/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="styles/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="styles/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link href="/styles/main.css" rel="stylesheet" type="text/css">
+
+    {% for stylesheet in page.stylesheets %}
+    <link href="{{stylesheet}}" rel="stylesheet" type="text/css">
+    {% endfor %}
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15522812-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="summary">
+        <h1 class="logo">
+          <a href="./">
+            <img src="imgs/cf_logo.png" title="codefirst.org" alt="codefirst.org">
+          </a>
+        </h1>
+        <div class="navigator">
+          <ul>
+            <li><a href="/">トップ</a></li>
+            <li><a href="/product.html">プロダクト</a></li>
+            <li><a href="/member.html">メンバー</a></li>
+            <li><a href="http://blog.codefirst.org/">ブログ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="page {{page.name}}">
+        {{ content }}
+        <br class="clear">
+      </div>
+
+      <div class="credits">
+        <p>
+          {% for footer in page.footers %}
+          {{footer}}<br>
+          {% endfor %}
+          Copyright (C) 2011-2012 <a href="http://www.codefirst.org">codefirst.org</a>, All rights reserved.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
