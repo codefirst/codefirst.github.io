@@ -27,7 +27,7 @@ features:
  - name: 全文検索
    image: imgs/ss_search.png
 
-keywords: ["チャットアプリケーション","Rails","WebSocket"]
+keywords: ["チャットアプリケーション", "Rails", "WebSocket"]
 ---
 
 ### 動作環境
