@@ -11,7 +11,7 @@ description: |
   following(friend)のグループ化表示ができるので、大勢followしている人にお勧めです。
 
 github_project: SnowRabbit
-commiters: ["banjun","mallowlabs","waruiko","mzp"]
+commiters: ["banjun", "mallowlabs", "waruiko", "mzp"]
 
 features:
  - name: タイムラインの表示
