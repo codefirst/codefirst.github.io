@@ -38,29 +38,31 @@ keywords: ["チャットアプリケーション", "Rails", "WebSocket"]
  * MongoDB 1.8.1 or later
  * Google Chrome / Firefox / Safari
 
-詳細は[AsakusaSatellite documentation-セットアップ](http://docs.asakusa-satellite.org/en/latest/setup.html)をご覧ください。
+詳細は [AsakusaSatellite documentation - セットアップ](http://docs.asakusa-satellite.org/en/latest/setup.html) をご覧ください。
 
 ### インストール
 
-[ダウンロードページ](https://github.com/codefirst/AsakusaSatellite/tags)から最新版をダウンロードし、展開してください。
+[ダウンロードページ](https://github.com/codefirst/AsakusaSatellite/tags) から最新版をダウンロードし、展開してください。
 展開したディレクトリを AsakusaSatellite にリネームし、以下のコマンドを実行してください。
 
 {% highlight bash %}
 $ cd AsakusaSatellite
 
 # 依存ライブラリのインストール
-$ bundle install --path vendor/bundle
+$ bundle install --path .bundle --without development test
 
-# MongoDBとSockyの起動
+# MongoDB と Socky の起動
 $ mongod --dbpath /path/to/db
 $ bundle exec thin -R socky/config.ru -p3002 -t0 start
 
-# AsakusaSatelliteの起動
-$ bundle exec rails server
+# AsakusaSatellite の起動
+$ bundle exec rake assets:precompile RAILS_ENV=production
+$ bundle exec rails server -e production
 {% endhighlight %}
 
-インストールが完了したら[http://localhost:3000/](http://localhost:3000/)にアクセスしてください。
+インストールが完了したら [http://localhost:3000/](http://localhost:3000/) にアクセスしてください。
 
 ### ドキュメント
 
  * [マニュアル](http://asakusasatellite.readthedocs.org/en/latest/index.html)
+ * [ブログ記事](http://blog.codefirst.org/tagged/AsakusaSatellite)
