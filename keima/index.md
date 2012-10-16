@@ -11,7 +11,7 @@ description: |
   メッセージングサービスの基盤として使われることを想定して開発されています。
 
 github_project: keima
-commiters: ["mzp","suer"]
+commiters: ["mzp", "suer"]
 
 features:
  - name: 各種ブラウザへのリアルタイム通知
