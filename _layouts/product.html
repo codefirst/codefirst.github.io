@@ -79,28 +79,34 @@ var _gaq = _gaq || [];
           <div class="feature span-24">
             <h3>主な特徴</h3>
             {% for feature in page.features %}
-            <div class="span-12 {% cycle '', 'last' %}">
-              <h4>{{ feature.name }}</h4>
+            <div class="span-11 {% cycle 'prepend-1', 'append-1 last' %}">
+              <h5>{{ feature.name }}</h5>
               <div><img class="ss" src="{{ feature.image }}" /></div>
             </div>
             {% endfor %}
           </div>
           {{ content }}
 
-          <h3>レポジトリ</h3>
-          <ul>
-            <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
-          </ul>
+          <div class="span-24">
+            <h3>レポジトリ</h3>
+            <ul>
+              <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
+            </ul>
+          </div>
 
-          <h3>要望の出し方・開発への参加方法</h3>
-          <p><a href="https://github.com/codefirst/{{ page.github_project }}/issues">Github issues</a> に登録してください。 pull requestも歓迎します。</p>
+          <div class="span-24">
+            <h3>要望の出し方・開発への参加方法</h3>
+            <p><a href="https://github.com/codefirst/{{ page.github_project }}/issues">GitHub issues</a> に登録してください。 pull request も歓迎します。</p>
+          </div>
 
-          <h3>コミッタ</h3>
-          <ul>
-            {% for c in page.commiters %}
-            <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
-            {% endfor %}
-          </ul>
+          <div class="span-24">
+            <h3>コミッタ</h3>
+            <ul>
+              {% for c in page.commiters %}
+              <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
 
