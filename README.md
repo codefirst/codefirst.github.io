@@ -2,7 +2,7 @@ codefirst.github.com
 ===========================
 The offcial site of codefirst.
 
-Requrements
+Requirements
 ---------------------------
 
     $ gem install Jykyll
