@@ -10,7 +10,7 @@ description: |
   debeso は、開発者向けのスニペットストックです。
   開発者間の知識を共有し、知識が行方不明になることを防ぎます。
 
-github_project: kariyasiesta
+github_project: debeso
 commiters: ["mallowlabs", "suer"]
 
 features:
