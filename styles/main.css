@@ -2,6 +2,7 @@
 
 body {
    background-image: url(../imgs/background.png);
+   background-color: #fcfcfc;
    background-repeat: repeat-y;
    background-position: center;
    font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
