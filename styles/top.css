@@ -4,16 +4,13 @@ h4 {
 .main-img-container {
    position:relative;
 }
-.main-img-container img {
-   width:920px;
-   height:288px;
-}
 .main-img {
    border-radius: 5px 5px 5px 5px;
    -webkit-border-radius: 5px 5px 5px 5px;
    box-shadow: 1px 1px 2px #999;
    -webkit-box-shadow: 1px 1px 2px #999;
    background-color: #289ad8;
+   width: 100%;
 }
 .excuse {
    color:white;
@@ -27,21 +24,22 @@ h4 {
    font-size:30px;
 }
 
-.page ul {
-    margin-left: 0;
+ul.arrow-list {
+    margin-left: 5px;
     padding-left: 0;
 }
 
-.page li {
+.arrow-list li {
     list-style: none;
     background: url(../imgs/li.png) no-repeat 0 0.25em;
     padding-left: 20px;
 }
-.page li a {
+.arrow-list li a {
    text-decoration: none;
    color: #777;
 }
-.page li a:hover {
+.arrow-list li a:hover {
    text-decoration: underline;
    color: #777;
 }
+

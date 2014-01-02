@@ -4,11 +4,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="description" content="{{page.description | strip_newlines}}">
     <meta name="keywords" content="{{page.keywords | join:','}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ page.canonical_url }}">
     <link href="./imgs/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="../styles/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="../styles/blueprint/print.css" type="text/css" media="print">
-    <!--[if lt IE 8]><link rel="stylesheet" href="../styles/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="../styles/bootstrap.css" type="text/css">
     <link href="/styles/main.css" rel="stylesheet" type="text/css">
     <link href="/styles/product.css" rel="stylesheet" type="text/css">
 
@@ -16,6 +15,12 @@
     <link href="{{stylesheet}}" rel="stylesheet" type="text/css">
     {% endfor %}
 
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
 var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-15522812-4']);
@@ -33,23 +38,33 @@ var _gaq = _gaq || [];
     <title>{{page.title}} | {{ page.subtitle }}</title>
   </head>
   <body>
-    <div class="container">
-      <div class="summary">
-        <div class="logo">
-          <h1 class="title">{{ page.title }}</h1>
-          <h2 class="title">{{ page.subtitle }} </h2>
+    <header class="navbar" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="logo navbar-brand">
+            <h1 class="title">{{ page.title }}</h1>
+          </div>
         </div>
-        <div class="navigator">
-          <ul>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="/">トップ</a></li>
             <li><a href="/product.html">プロダクト</a></li>
             <li><a href="/member.html">メンバー</a></li>
             <li><a href="http://blog.codefirst.org/">ブログ</a></li>
           </ul>
-        </div>
+        </nav>
       </div>
 
-      <div class="social">
+      <div class="container">
+        <h2 class="title">{{ page.subtitle }} </h2>
+      </div>
+      <div class="container social">
         <div class="twitter">
           <a href="http://twitter.com/share" class="twitter-share-button" data-url="{{page.canonical_url}}" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         </div>
@@ -63,50 +78,58 @@ var _gaq = _gaq || [];
           <g:plusone size="medium"></g:plusone>
         </div>
       </div>
+    </header>
 
-      <div class="page {{page.name}}">
+      <div class="container page {{page.name}}">
         <div>
           <h3>{{ page.title }} とは</h3>
           <p>{{ page.description }}</p>
-          <div class="span-24">
-            <div class="span-12 main-image">
-              <img src="imgs/ss_all.png" />
-            </div>
-            <div class="copy span-12 last">
-              {{ page.copy | newline_to_br }}
-            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 main-image">
+            <img src="imgs/ss_all.png" />
           </div>
-          <div class="feature span-24">
-            <h3>主な特徴</h3>
+          <div class="copy col-sm-6">
+            {{ page.copy | newline_to_br }}
+          </div>
+        </div>
+
+        <div>
+          <h3>主な特徴</h3>
+          <div class="feature row">
             {% for feature in page.features %}
-            <div class="span-11 {% cycle 'prepend-1', 'append-1 last' %}">
+            <div class="col-sm-6 {% cycle 'prepend-1', 'append-1 last' %}">
               <h5>{{ feature.name }}</h5>
               <div><img class="ss" src="{{ feature.image }}" /></div>
             </div>
             {% endfor %}
           </div>
+        </div>
+
+        <div>
           {{ content }}
+        </div>
 
-          <div class="span-24">
-            <h3>リポジトリ</h3>
-            <ul>
-              <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
-            </ul>
-          </div>
+        <div>
+          <h3>リポジトリ</h3>
+          <ul>
+            <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
+          </ul>
+        </div>
 
-          <div class="span-24">
-            <h3>要望の出し方・開発への参加方法</h3>
-            <p><a href="https://github.com/codefirst/{{ page.github_project }}/issues">GitHub issues</a> に登録してください。 pull request も歓迎します。</p>
-          </div>
+        <div>
+          <h3>要望の出し方・開発への参加方法</h3>
+          <p><a href="https://github.com/codefirst/{{ page.github_project }}/issues">GitHub issues</a> に登録してください。 pull request も歓迎します。</p>
+        </div>
 
-          <div class="span-24">
-            <h3>コミッタ</h3>
-            <ul>
-              {% for c in page.commiters %}
-              <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
+        <div>
+          <h3>コミッタ</h3>
+          <ul>
+            {% for c in page.commiters %}
+            <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
+            {% endfor %}
+          </ul>
         </div>
       </div>
 

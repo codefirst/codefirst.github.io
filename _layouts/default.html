@@ -5,17 +5,22 @@
     <meta name="description" content="{{page.description | strip_newlines}}">
     <meta name="keywords" content="{{page.keywords | join:','}}">
     <meta name="google-site-verification" content="TCzB62RDAoVhpsxKgzjd760uASiR7rz7MdqE9SyNGqo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ page.canonical_url }}">
     <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="styles/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="styles/blueprint/print.css" type="text/css" media="print">
-    <!--[if lt IE 8]><link rel="stylesheet" href="styles/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="styles/bootstrap.css" type="text/css" >
     <link href="/styles/main.css" rel="stylesheet" type="text/css">
 
     {% for stylesheet in page.stylesheets %}
     <link href="{{stylesheet}}" rel="stylesheet" type="text/css">
     {% endfor %}
 
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-15522812-4']);
@@ -30,26 +35,34 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    <div class="container">
-      <div class="summary">
-        <h1 class="logo">
-          <a href="./">
-            <img src="imgs/cf_logo.png" title="codefirst.org" alt="codefirst.org">
-          </a>
-        </h1>
-        <div class="navigator">
-          <ul>
+    <header class="navbar" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h1 class="logo">
+            <a href="./" class="navbar-brand">
+              <img src="imgs/cf_logo.png" title="codefirst.org" alt="codefirst.org">
+            </a>
+          </h1>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="/">トップ</a></li>
             <li><a href="/product.html">プロダクト</a></li>
             <li><a href="/member.html">メンバー</a></li>
             <li><a href="http://blog.codefirst.org/">ブログ</a></li>
           </ul>
-        </div>
+        </nav>
       </div>
+    </header>
 
-      <div class="page {{page.name}}">
+      <div class="container {{page.name}}">
         {{ content }}
-        <br class="clear">
       </div>
 
       <div class="credits">

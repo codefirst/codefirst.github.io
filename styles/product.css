@@ -1,14 +1,12 @@
-.header h1{
-   margin-left: -9999px;
-}
-.header {
-   background-image: url(imgs/logo.png);
-   background-repeat: no-repeat;
-   padding-bottom: 5px;
-}
-
 .main-image {
    text-align: center;
+}
+
+.navbar-right { margin-top: 10px; }
+
+.logo {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 img.ss {
@@ -33,6 +31,11 @@ img.ss {
   font-family: serif;
   color: #555;
   text-shadow: 4px 4px 3px #999;
+}
+@media (max-width: 768px) {
+.copy {
+  margin-top: 0;
+}
 }
 
 h5 {

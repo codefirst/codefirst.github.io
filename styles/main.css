@@ -1,33 +1,14 @@
 @charset "utf-8";
 
 body {
-   background-image: url(../imgs/background.png);
-   background-color: #fcfcfc;
-   background-repeat: repeat-y;
-   background-position: center;
    font-family: "メイリオ", Meiryo, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
 }
 
 /* header */
-.logo {
-   float: left;
-}
-
-.navigator {
-   float: right;
-   margin-right: 20px;
-}
-.navigator li {
-   list-style: none;
-   float: left;
-   margin-left: 20px;
-   margin-top: 20px;
-   padding: 0px;
-   font-size: 14px;
-}
-.navigator li a {
-   text-decoration: none;
-}
+.navbar-right { margin-top: 15px; }
+.icon-bar { background-color: #333333; }
+.navbar-header button { margin-top: 15px; }
+.navbar-brand img { height: 36px; }
 
 .credits {
    text-align: center;
@@ -39,10 +20,13 @@ body {
     clear: both;
 }
 
-
 /* page */
+.main-image img {
+  width: 100%;
+}
+
 h1 {
-    margin: 20px 0;
+    margin: 0;
 }
 
 h3 {
@@ -70,24 +54,24 @@ h3 {
 a {
    color: #00a381;
    font-style: normal;
-   text-decoration: underline;
+   text-decoration: none;
 }
 a:link {
    color: #00a381;
    font-style: normal;
-   text-decoration: underline;
+   text-decoration: none;
 }
 a:visited {
    color: #006e54;
-   text-decoration: underline;
+   text-decoration: none;
 }
 a:hover {
    color: #00a381;
    font-style: normal;
-   text-decoration: underline;
+   text-decoration: none;
 }
 a:active {
-   text-decoration: none;
+   text-decoration: underline;
 }
 a img {
    border: none;
@@ -164,6 +148,10 @@ h4 {
    margin-bottom: 30px;
 }
 
+.product ol {
+   padding-left: 0;
+}
+
 .product ol li {
    width:24px;
    height:24px;
@@ -185,8 +173,13 @@ h4 {
 }
 
 h1.title{
-    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 2em;
+    font-weight: normal;
 }
 h2.title{
     font-size: 1.5em;
+    font-weight: normal;
+}
 }
