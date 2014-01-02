@@ -10,6 +10,6 @@ Requirements
 How to commit:
 ---------------------------
 
-    $ jekyll --server --auto
+    $ jekyll serve --watch
 
 
