@@ -5,11 +5,11 @@ The offcial site of codefirst.
 Requirements
 ---------------------------
 
-    $ gem install Jykyll
+    $ bundle install --path .bundle
 
 How to commit:
 ---------------------------
 
-    $ jekyll serve --watch
+    $ bundle exec jekyll serve --watch
 
 
