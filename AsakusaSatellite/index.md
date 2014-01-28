@@ -32,13 +32,13 @@ keywords: ["チャットアプリケーション", "Rails", "WebSocket"]
 
 ### 動作環境
 
- * Ruby 1.8.7 or 1.9.3
+ * Ruby 1.8.7 / 1.9.3 / 2.0.0 / 2.1.0 or JRuby 1.7.1
  * RubyGems 1.4.2 or later
  * Bundler 1.0.7 or later
  * MongoDB 1.8.1 or later
  * Google Chrome / Firefox / Safari
 
-詳細は [AsakusaSatellite documentation - セットアップ](http://docs.asakusa-satellite.org/en/latest/setup.html) をご覧ください。
+詳細は [AsakusaSatellite documentation - セットアップ](http://docs.asakusa-satellite.org/ja/latest/setup.html) をご覧ください。
 
 ### インストール
 
@@ -64,5 +64,5 @@ $ bundle exec rails server -e production
 
 ### ドキュメント
 
- * [マニュアル](http://asakusasatellite.readthedocs.org/en/latest/index.html)
+ * [マニュアル](http://docs.asakusa-satellite.org/)
  * [ブログ記事](http://blog.codefirst.org/tagged/AsakusaSatellite)
