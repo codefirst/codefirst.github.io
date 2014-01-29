@@ -97,14 +97,22 @@ var _gaq = _gaq || [];
 
         <div>
           <h3>主な特徴</h3>
-          <div class="feature row">
-            {% for feature in page.features %}
-            <div class="col-sm-6 {% cycle 'prepend-1', 'append-1 last' %}">
-              <h5>{{ feature.name }}</h5>
-              <div><img class="ss" src="{{ feature.image }}" /></div>
-            </div>
-            {% endfor %}
-          </div>
+          {% for feature in page.features %}
+            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+            {% if thecycle == 'odd' %}
+              <div class="feature row">
+                <div class="col-md-offset-1 col-sm-5">
+                  <h5>{{ feature.name }}</h5>
+                  <div><img class="ss" src="{{ feature.image }}" /></div>
+                </div>
+            {% else %}
+                <div class="col-sm-5">
+                  <h5>{{ feature.name }}</h5>
+                  <div><img class="ss" src="{{ feature.image }}" /></div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
 
         <div>
