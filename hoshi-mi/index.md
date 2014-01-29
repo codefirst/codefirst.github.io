@@ -26,6 +26,14 @@ features:
 keywords: ["Ruby", "Heroku", "データビジュアライゼーション", "WebAPI"]
 ---
 
+### GrowthForecast との比較
+
+* Ruby on Rails 製であるため、一緒に使うことが多い Fluentd と親和性が高いです
+* RRDTool を使っていません。RRDTool の生成するグラフに見飽きた方にぴったりです。
+* Heroku 上で動作することを前提に作られています。そのため、リポジトリを push するだけですぐ使えます。
+* API キーを知らなければデータを post できないように作られています。
+* その他の機能は GrowthForecast よりも少ないです。
+
 ### ドキュメント
 
  * [マニュアル](https://readthedocs.org/docs/hoshi-mi/en/latest/)
