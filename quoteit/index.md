@@ -8,10 +8,10 @@ copy: "Share your knowledge\nto reduce code."
 
 description: |
   QuoteIt は、拡張可能な引用サービスです。
-  URLから内容の引用方法を共有することにより、引用プラグインの開発を容易にします。
+  URL から内容の引用方法を共有することにより、引用プラグインの開発を容易にします。
 
 github_project: QuoteIt
-commiters: ["mzp"]
+commiters: ["mzp", "mallowlabs"]
 
 features:
  - name: 画像展開
@@ -20,16 +20,17 @@ features:
    image: imgs/ss_tweet.png
  - name: API
    image: imgs/ss_api.png
- - name: Wedataによる自由な拡張
-   image: imgs/ss_wedata.png
+ - name: OpenGrahp 対応
+   image: imgs/ss_opengraph.png
 
 keywords: ["引用", "Twitter", "サムネイル", "WebAPI"]
 ---
 
 ### 公開サイト
 
- * [Quote It - quote webpage contents](http://quoteit.heroku.com/)
+ * [Quote It](https://quoteit.herokuapp.com/)
 
 ### ドキュメント
 
  * [マニュアル](http://readthedocs.org/docs/quoteit/en/latest/)
+

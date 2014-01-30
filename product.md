@@ -28,7 +28,7 @@ AsakusaSatellite は、開発者向けのリアルタイムチャットア
 
 <div class="col-sm-4"><img src="./quoteit/imgs/ss.png" class="ss thumbnail"/></div>
 
-QuoteItは各種Webサービスの埋め込み用HTMLを統一的に取得できるWebAPIです。バックエンドにwedataを採用しているため、誰でも引用元を簡単に追加可能です。
+QuoteIt は各種 Web サービスの埋め込み用 HTML を統一的に取得できる WebAPI です。
 
  1. ![mzp]
  1. ![mallowlabs]
