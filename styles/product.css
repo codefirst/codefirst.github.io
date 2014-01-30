@@ -30,7 +30,6 @@ img.ss {
   font-weight: bold;
   font-family: serif;
   color: #555;
-  text-shadow: 4px 4px 3px #999;
 }
 @media (max-width: 768px) {
 .copy {

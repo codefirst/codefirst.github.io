@@ -12,7 +12,7 @@ keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 ### Productivity / 生産性の向上
 #### [AsakusaSatellite | A realtime chat application for Developers](AsakusaSatellite/)
 
-<div class="col-sm-4"><img src="AsakusaSatellite/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="AsakusaSatellite/imgs/ss.png" class="ss thumbnail"/></div>
 
 AsakusaSatellite は、開発者向けのリアルタイムチャットア
 プリケーションです。開発者間のコミュニケーション品質を向上
@@ -26,7 +26,7 @@ AsakusaSatellite は、開発者向けのリアルタイムチャットア
 
 #### [QuoteIt | thumbnail/quote boilerplate](quoteit/)
 
-<div class="col-sm-4"><img src="./quoteit/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="./quoteit/imgs/ss.png" class="ss thumbnail"/></div>
 
 QuoteItは各種Webサービスの埋め込み用HTMLを統一的に取得できるWebAPIです。バックエンドにwedataを採用しているため、誰でも引用元を簡単に追加可能です。
 
@@ -35,7 +35,7 @@ QuoteItは各種Webサービスの埋め込み用HTMLを統一的に取得でき
 
 #### [Keima | A simple, open, realtime notification service](keima/)
 
-<div class="col-sm-4"><img src="keima/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="keima/imgs/ss.png" class="ss thumbnail"/></div>
 
 Node.js で書かれた Pusher クローンです。
 メッセージングサービスの基盤として使われることを想定して開発されています。
@@ -45,7 +45,7 @@ Node.js で書かれた Pusher クローンです。
 
 #### [SnowRabbit | Tweet with the desktop rabbit](SnowRabbit/)
 
-<div class="col-sm-4"><img src="./SnowRabbit/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="./SnowRabbit/imgs/ss.png" class="ss thumbnail"/></div>
 
 SnowRabbit は OSX 用の Twitter クライアントです。Mac OS X Snow Leopard/Lion で動作します。
 following(friend) のグループ化表示ができるので、大勢 follow している人にお勧めです。
@@ -56,7 +56,7 @@ following(friend) のグループ化表示ができるので、大勢 follow し
 
 #### [KariyaSiesta | A flexible coding style checker for C](kariyasiesta/)
 
-<div class="col-sm-4"><img src="./kariyasiesta/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="./kariyasiesta/imgs/ss.png" class="ss thumbnail"/></div>
 
 KariyaSiesta は、C 言語向けのコーディングチェッカ CX-Checker の fork プロジェクトです。コーディング規約はXpathを用いて簡単に拡張できます。
 
@@ -66,7 +66,7 @@ KariyaSiesta は、C 言語向けのコーディングチェッカ CX-Checker �
 
 #### [debeso | A snippet stock application for Developers](debeso/)
 
-<div class="col-sm-4"><img src="./debeso/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="./debeso/imgs/ss.png" class="ss thumbnail"/></div>
 
 debeso は、開発者向けのスニペットストックです。開発者間の
 知識を共有し、知識が行方不明になることを防ぎます。
@@ -78,7 +78,7 @@ debeso は、開発者向けのスニペットストックです。開発者間�
 
 #### [Dashbozu | A missing line for software development](dashbozu/)
 
-<div class="col-sm-4"><img src="dashbozu/imgs/ss.png" class="ss"/></div>
+<div class="col-sm-4"><img src="dashbozu/imgs/ss.png" class="ss thumbnail"/></div>
 
 Redmine, git, Jenkins などプロジェクト管理ツールの状態を横断的かつリアルタイムに表示する Web アプリケーションです。
 一つの画面でプロジェクトの”今”の状態を把握できます。
