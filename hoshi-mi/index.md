@@ -3,7 +3,7 @@ layout: product
 canonical_url: http://www.codefirst.org/hoshi-mi/
 
 title: Hoshi-mi
-subtitle: Heroku で動作することを重視したデータビジュアライゼーションツール
+subtitle: A Heroku friendly visualization tool
 copy: "You can make\nmany graphs easily"
 
 description: |

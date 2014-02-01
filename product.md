@@ -54,15 +54,14 @@ following(friend) のグループ化表示ができるので、大勢 follow し
 
 ### Quality / 品質の向上
 
-#### [KariyaSiesta | A flexible coding style checker for C](kariyasiesta/)
+#### [Sunline | A lightweight script and log management tool](sunline/)
 
-<div class="col-sm-4"><img src="./kariyasiesta/imgs/ss.png" class="ss thumbnail"/></div>
+<div class="col-sm-4"><img src="./sunline/imgs/ss_all.png" class="ss thumbnail"/></div>
 
-KariyaSiesta は、C 言語向けのコーディングチェッカ CX-Checker の fork プロジェクトです。コーディング規約はXpathを用いて簡単に拡張できます。
+Sunline は本番サーバでのスクリプトの実行とログの管理を行うシンプルな Web アプリケーションです。 同様のソフトウェアに Webistrano があります。
 
+ 1. ![suer]
  1. ![mallowlabs]
- 1. ![mzp]
- 1. ![shimomura1004]
 
 #### [debeso | A snippet stock application for Developers](debeso/)
 
@@ -73,6 +72,16 @@ debeso は、開発者向けのスニペットストックです。開発者間�
 
  1. ![suer]
  1. ![mallowlabs]
+
+#### [KariyaSiesta | A flexible coding style checker for C](kariyasiesta/)
+
+<div class="col-sm-4"><img src="./kariyasiesta/imgs/ss.png" class="ss thumbnail"/></div>
+
+KariyaSiesta は、C 言語向けのコーディングチェッカ CX-Checker の fork プロジェクトです。コーディング規約はXpathを用いて簡単に拡張できます。
+
+ 1. ![mallowlabs]
+ 1. ![mzp]
+ 1. ![shimomura1004]
 
 ### Visibility / 可視化
 
@@ -88,6 +97,16 @@ Redmine, git, Jenkins などプロジェクト管理ツールの状態を横断�
  1. ![mzp]
  1. ![suer]
  1. ![mallowlabs]
+
+#### [Hoshi-mi | A Heroku friendly visualization tool](hoshi-mi/)
+
+<div class="col-sm-4"><img src="hoshi-mi/imgs/ss_all.png" class="ss thumbnail"/></div>
+
+Hoshi-mi は、Heroku で動作することを重視したデータビジュアライゼーションツールです。 同様のソフトウェアに GrowthForecast があります。
+
+ 1. ![suer]
+ 1. ![mallowlabs]
+ 1. ![mzp]
 
 ### Chrome Extensions
 
