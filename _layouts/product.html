@@ -42,7 +42,7 @@ var _gaq = _gaq || [];
     </script>
     <title>{{page.title}} | {{ page.subtitle }}</title>
   </head>
-  <body>
+  <body itemscope itemtype="http://schema.org/SoftwareApplication">
     <header class="navbar" role="banner">
       <div class="container">
         <div class="navbar-header">
@@ -53,7 +53,7 @@ var _gaq = _gaq || [];
             <span class="icon-bar"></span>
           </button>
           <div class="logo navbar-brand">
-            <h1 class="title">{{ page.title }}</h1>
+            <h1 class="title" itemprop="name">{{ page.title }}</h1>
           </div>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -88,12 +88,12 @@ var _gaq = _gaq || [];
       <div class="container page {{page.name}}">
         <div>
           <h3>{{ page.title }} とは</h3>
-          <p>{{ page.description }}</p>
+          <p itemprop="description">{{ page.description }}</p>
         </div>
 
         <div class="row">
           <div class="col-sm-6 main-image">
-            <img src="imgs/ss_all.png" />
+            <img src="imgs/ss_all.png" itemprop="image" />
           </div>
           <div class="copy col-sm-6">
             {{ page.copy | newline_to_br }}
@@ -108,12 +108,12 @@ var _gaq = _gaq || [];
               <div class="feature row">
                 <div class="col-md-offset-1 col-sm-5">
                   <h5>{{ feature.name }}</h5>
-                  <div><img class="ss img-thumbnail" src="{{ feature.image }}" /></div>
+                  <div><img class="ss img-thumbnail" src="{{ feature.image }}" itemprop="screenshot" /></div>
                 </div>
             {% else %}
                 <div class="col-sm-5">
                   <h5>{{ feature.name }}</h5>
-                  <div><img class="ss img-thumbnail" src="{{ feature.image }}" /></div>
+                  <div><img class="ss img-thumbnail" src="{{ feature.image }}" itemprop="screenshot" /></div>
                 </div>
               </div>
             {% endif %}
@@ -147,7 +147,7 @@ var _gaq = _gaq || [];
       </div>
 
       <div class="credits">
-        <p>Copyright (C) 2011-2014 <a href="http://www.codefirst.org">codefirst.org</a>, All rights reserved.</p>
+        <p>Copyright (C) 2011-2014 <a href="http://www.codefirst.org"><span itemprop="author" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">codefirst.org</span></span></a>, All rights reserved.</p>
       </div>
     </div>
   </body>
