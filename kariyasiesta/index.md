@@ -39,7 +39,7 @@ KariyaSiesta は、CX-Checker の特徴に加え、以下の強化をしてい�
 
 ### ドキュメント
 
- * [マニュアル](http://kariyasiesta.readthedocs.org/en/latest/)
+ * [マニュアル](https://kariyasiesta.readthedocs.org/)
 
 ### リンク
 

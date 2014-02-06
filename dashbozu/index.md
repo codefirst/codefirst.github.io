@@ -24,7 +24,7 @@ keywords: ["Redmine", "Jenkins", "Heroku", "Git"]
 
 ### ドキュメント
 
- * [マニュアル](https://dashbozu.readthedocs.org//)
+ * [マニュアル](https://dashbozu.readthedocs.org/)
  * [発表資料 (ML 名古屋)](http://www.slideshare.net/mallowlabs/more-effective-feedback-dashbozu)
 
 ### 対応サービス

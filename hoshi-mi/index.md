@@ -36,4 +36,4 @@ keywords: ["Ruby", "Heroku", "データビジュアライゼーション", "WebA
 
 ### ドキュメント
 
- * [マニュアル](http://hoshi-mi.readthedocs.org/)
+ * [マニュアル](https://hoshi-mi.readthedocs.org/)
