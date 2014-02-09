@@ -66,3 +66,5 @@ $ bundle exec rails server -e production
 
  * [マニュアル](http://docs.asakusa-satellite.org/)
  * [ブログ記事](http://blog.codefirst.org/tagged/AsakusaSatellite)
+ * [発表資料 (名古屋 Reject 会議 02)](http://www.slideshare.net/mallowlabs/a-realtime-chat-application-for-developers-asakusasatellite)
+ * [発表資料 (LL 名古屋)](http://www.slideshare.net/suer81/how-are-asakusasatellite-growing-with-mzp)
