@@ -79,8 +79,12 @@ var _gaq = _gaq || [];
         <div class="facebook">
           <iframe src="http://www.facebook.com/plugins/like.php?href={{ page.canonical_url | cgi_escape }}&amp;layout=button_count&amp;show_faces=false&amp;width=110&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
         </div>
-        <div class="googleplus">
+        <div class="googleplus" style="width: 68px">
           <g:plusone size="medium"></g:plusone>
+        </div>
+        <div class="pocket">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
         </div>
       </div>
     </header>
