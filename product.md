@@ -9,7 +9,9 @@ name: product
 keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 ---
 ## プロダクト紹介
+
 ### Productivity / 生産性の向上
+
 #### [AsakusaSatellite | A realtime chat application for Developers](AsakusaSatellite/)
 
 <div class="col-sm-4"><img src="AsakusaSatellite/imgs/ss.png" class="ss thumbnail"/></div>
@@ -116,13 +118,13 @@ Hoshi-mi は、Heroku で動作することを重視したデータビジュア�
 
 ### Redmine Plugins
 
- * [Redmine Plugins | FIXME OR DIE](http://suer.github.com/)
+ * [Redmine Plugins \| FIXME OR DIE](https://suer.github.io/)
 
 ### Jenkins Plugin
 
  * [Websocket Plugins](https://wiki.jenkins-ci.org/display/JENKINS/Websocket+Plugin)
  * [Simple Theme Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
- * [Jenkins Plugin Hub](http://jenkins-plugin-hub.heroku.com/)
+ * [Jenkins Plugin Hub](https://jenkins-plugin-hub.heroku.com/)
 
 [suer]: imgs/icons/suer.png "suer"
 [mallowlabs]: imgs/icons/mallowlabs.png "mallowlabs"

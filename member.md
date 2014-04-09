@@ -8,6 +8,7 @@ title: "メンバー | codefirst.org"
 keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 ---
 ## メンバー紹介
+
 #### あつみん / [@atsumin](http://twitter.com/atsumin)
 
 <div><img src="imgs/icons/atsumin.png" class="icon"></div>
