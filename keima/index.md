@@ -16,7 +16,7 @@ commiters: ["mzp", "suer"]
 features:
  - name: 各種ブラウザへのリアルタイム通知
    image: imgs/ss_realtime.png
- - name: Node Ninja等のPaaSへのデプロイ対応
+ - name: Heroku / Node Ninja 等の PaaS へのデプロイ対応
    image: imgs/ss_ninja.png
 
 keywords: ["node.js", "pusher", "keima", "websocket"]
