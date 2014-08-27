@@ -5,7 +5,7 @@ description: codefirstのプロダクト紹介
 
 title: "プロダクト | codefirst.org"
 
-name: product
+class_name: product
 keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 ---
 ## プロダクト紹介

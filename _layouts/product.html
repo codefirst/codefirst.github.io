@@ -89,7 +89,7 @@ var _gaq = _gaq || [];
       </div>
     </header>
 
-      <div class="container page {{page.name}}">
+      <div class="container page {{page.class_name}}">
         <div>
           <h3>{{ page.title }} とは</h3>
           <p itemprop="description">{{ page.description }}</p>
@@ -131,7 +131,7 @@ var _gaq = _gaq || [];
         <div>
           <h3>リポジトリ</h3>
           <ul>
-            <li><a href="http://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
+            <li><a href="https://github.com/codefirst/{{ page.github_project}}">codefirst / {{page.github_project}} - GitHub</a></li>
           </ul>
         </div>
 
@@ -144,7 +144,7 @@ var _gaq = _gaq || [];
           <h3>コミッタ</h3>
           <ul>
             {% for c in page.commiters %}
-            <li><a href="http://twitter.com/{{ c }}">@{{ c }}</a></li>
+            <li><a href="https://twitter.com/{{ c }}">@{{ c }}</a></li>
             {% endfor %}
           </ul>
         </div>
