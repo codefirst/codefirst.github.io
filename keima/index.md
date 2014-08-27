@@ -24,7 +24,7 @@ keywords: ["node.js", "pusher", "keima", "websocket"]
 
 ### デモサイト
 
- * [Keima on Heroku](http://keima.herokuapp.com)
+ * [Keima on Heroku](https://keima.herokuapp.com)
 
 ### ドキュメント
 

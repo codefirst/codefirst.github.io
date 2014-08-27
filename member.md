@@ -9,7 +9,7 @@ keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 ---
 ## メンバー紹介
 
-#### あつみん / [@atsumin](http://twitter.com/atsumin)
+#### あつみん / [@atsumin](https://twitter.com/atsumin)
 
 <div><img src="imgs/icons/atsumin.png" class="icon"></div>
 
@@ -20,7 +20,7 @@ keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 
 好きなエディタ: Emacs / 好きなブラウザ: Firefox / 好きなOS: FreeBSD
 
-#### すえつぐ / [@suer](http://twitter.com/suer)
+#### すえつぐ / [@suer](https://twitter.com/suer)
 
 <div><img src="imgs/icons/suer.png" class="icon"></div>
 
@@ -30,7 +30,7 @@ keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 
 好きなエディタ: 秀丸 / 好きなブラウザ: InternetExplorer 6.0 / 好きなOS: Windows XP
 
-#### みずぴー / [@mzp](http://twitter.com/mzp)
+#### みずぴー / [@mzp](https://twitter.com/mzp)
 
 <div><img src="imgs/icons/mzp.png" class="icon"></div>
 
@@ -41,7 +41,7 @@ codefirst 内の行動には気をつけなければいけない。
 
 好きなエディタ: Emacs / 好きなブラウザ: w3m / 好きなOS: Debian
 
-#### まろぶ / [@mallowlabs](http://twitter.com/mallowlabs)
+#### まろぶ / [@mallowlabs](https://twitter.com/mallowlabs)
 
 <div><img src="imgs/icons/mallowlabs.png" class="icon"></div>
 
@@ -52,7 +52,7 @@ codefirst のプロダクトアイデアの大半は彼の妄想が元である�
 
 好きなエディタ: Vim / 好きなブラウザ: Google Chrome(dev channel) / 好きなOS: Ubuntu
 
-#### しもむら / [@shimomura1004](http://twitter.com/shimomura1004)
+#### しもむら / [@shimomura1004](https://twitter.com/shimomura1004)
 
 <div><img src="imgs/icons/shimomura1004.png" class="icon"></div>
 
@@ -62,7 +62,7 @@ codefirst のプロダクトアイデアの大半は彼の妄想が元である�
 
 好きなエディタ: NTEmacs / 好きなブラウザ: Google Chrome / 好きなOS: Ubuntu
 
-#### ばんじゅん / [@banjun](http://twitter.com/banjun)
+#### ばんじゅん / [@banjun](https://twitter.com/banjun)
 
 <div><img src="imgs/icons/banjun.png" class="icon"></div>
 
@@ -73,7 +73,7 @@ iPhone アプリ作ってよ」と mzp に無茶ぶりされた際、
 
 好きなエディタ: Xcode / 好きなブラウザ: Webkit,Safari / 好きなOS: OS X
 
-#### どねす / [@rednes](http://twitter.com/rednes)
+#### どねす / [@rednes](https://twitter.com/rednes)
 
 <div><img src="imgs/icons/rednes.png" class="icon"></div>
 

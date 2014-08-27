@@ -124,7 +124,7 @@ Hoshi-mi は、Heroku で動作することを重視したデータビジュア�
 
  * [Websocket Plugins](https://wiki.jenkins-ci.org/display/JENKINS/Websocket+Plugin)
  * [Simple Theme Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
- * [Jenkins Plugin Hub](https://jenkins-plugin-hub.heroku.com/)
+ * [Jenkins Plugin Hub](https://jenkins-plugin-hub.herokuapp.com/)
 
 [suer]: imgs/icons/suer.png "suer"
 [mallowlabs]: imgs/icons/mallowlabs.png "mallowlabs"
