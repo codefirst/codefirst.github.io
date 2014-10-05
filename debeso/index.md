@@ -51,6 +51,6 @@ $ bundle exec padrino start
 
 ### デモサイト
 
- * [debeso on Heroku](http://debeso.heroku.com/)
+ * [debeso on Heroku](https://debeso.herokuapp.com/)
 
 一定時間が経過するとリポジトリは自動で削除されます。
