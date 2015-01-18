@@ -54,6 +54,16 @@ following(friend) のグループ化表示ができるので、大勢 follow し
 
  1. ![banjun]
 
+#### [FlickSKK | 手のひらにSKKを](FlickSKK/)
+
+<div class="col-sm-4"><img src="./FlickSKK/imgs/ss.png" class="ss thumbnail"/></div>
+
+FlickSKKはiOS用のSKK(Simple Kana to Kanji conversion program)です。 SKKの使い勝手をそのままに、iPhoneで使いやすいようにフリック入力に対応しています。
+
+ 1. ![banjun]
+ 2. ![mallowlabs]
+ 3. ![mzp]
+
 ### Quality / 品質の向上
 
 #### [Sunline | A lightweight script and log management tool](sunline/)
