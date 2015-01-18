@@ -10,7 +10,7 @@ description: |
   FlickSKKはiOS用のSKK(Simple Kana to Kanji conversion program)です。 SKKの使い勝手をそのままに、iPhoneで使いやすいようにフリック入力に対応しています。
 
 github_project: FlickSKK
-commiters: ["banjun","mzp"]
+commiters: ["banjun","mzp","mallowlabs"]
 
 features:
  - name: フリック入力
