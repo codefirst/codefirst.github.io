@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/keima/
+canonical_url: https://www.codefirst.org/keima/
 
 title: Keima
 subtitle: A simple, open, realtime notification service

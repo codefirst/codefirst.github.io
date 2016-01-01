@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/debeso/
+canonical_url: https://www.codefirst.org/debeso/
 
 title: debeso
 subtitle: 開発者向けスニペットストック

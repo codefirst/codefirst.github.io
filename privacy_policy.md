@@ -1,6 +1,6 @@
 ---
 layout: default
-canonical_url: http://www.codefirst.org/privacy_policy/
+canonical_url: https://www.codefirst.org/privacy_policy/
 description: "codefirstのプライバシーポリシー"
 
 title: "プライバシーポリシー| codefirst.org"

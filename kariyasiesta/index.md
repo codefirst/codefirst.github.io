@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/kariyasiesta/
+canonical_url: https://www.codefirst.org/kariyasiesta/
 
 title: KariyaSiesta
 subtitle: A flexible coding style checker for C

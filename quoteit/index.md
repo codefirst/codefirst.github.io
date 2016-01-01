@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/quoteit/
+canonical_url: https://www.codefirst.org/quoteit/
 
 title: QuoteIt
 subtitle: 拡張可能な引用サービス

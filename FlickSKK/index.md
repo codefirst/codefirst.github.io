@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/FlickSKK/
+canonical_url: https://www.codefirst.org/FlickSKK/
 
 title: FlickSKK
 subtitle: 手のひらにSKKを

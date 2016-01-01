@@ -1,6 +1,6 @@
 ---
 layout: default
-canonical_url: http://www.codefirst.org/product/
+canonical_url: https://www.codefirst.org/product/
 description: codefirstのプロダクト紹介
 
 title: "プロダクト | codefirst.org"

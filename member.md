@@ -1,6 +1,6 @@
 ---
 layout: default
-canonical_url: http://www.codefirst.org/member/
+canonical_url: https://www.codefirst.org/member/
 description: "codefirstのメンバー紹介"
 
 title: "メンバー | codefirst.org"

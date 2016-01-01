@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/sunline/
+canonical_url: https://www.codefirst.org/sunline/
 
 title: Sunline
 subtitle: A lightweight script and log management tool

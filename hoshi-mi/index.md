@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/hoshi-mi/
+canonical_url: https://www.codefirst.org/hoshi-mi/
 
 title: Hoshi-mi
 subtitle: A Heroku friendly visualization tool

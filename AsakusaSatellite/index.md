@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://codefirst.github.com/AsakusaSatellite/
+canonical_url: https://www.codefirst.org/AsakusaSatellite/
 
 title: AsakusaSatellite
 subtitle: 開発者向けリアルタイムチャットアプリケーション

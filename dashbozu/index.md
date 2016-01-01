@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://www.codefirst.org/dashbozu/
+canonical_url: https://www.codefirst.org/dashbozu/
 
 title: Dashbozu
 subtitle: A missing line for software development

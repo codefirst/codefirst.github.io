@@ -1,6 +1,6 @@
 ---
 layout: product
-canonical_url: http://codefirst.github.com/SnowRabbit/
+canonical_url: https://www.codefirst.org/SnowRabbit/
 
 title: SnowRabbit
 subtitle: ゆるふわ系Twitterクライアント
