@@ -37,4 +37,5 @@ keywords: ["iPhone","iPad", "iOS", "日本語キーボード", "SKK"]
  * [FlickSKK 1.2: 更に流れるような日本語変換](http://mzp.hatenablog.com/entry/2015/02/25/203025)
  * [FlickSKK 1.3: 補完の強化](http://mzp.hatenablog.com/entry/2015/04/29/135124)
  * [FlickSKK 1.4: 追加辞書対応](http://mzp.hatenablog.com/entry/2015/07/18/072735)
+ * [FlickSKK 1.4.1: 細かな修正](http://mzp.hatenablog.com/entry/2015/09/03/220506)
 
