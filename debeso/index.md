@@ -49,8 +49,3 @@ $ bundle exec padrino start
 
 インストールが完了したら[http://localhost:3000/](http://localhost:3000/)にアクセスしてください。
 
-### デモサイト
-
- * [debeso on Heroku](https://debeso.herokuapp.com/)
-
-一定時間が経過するとリポジトリは自動で削除されます。

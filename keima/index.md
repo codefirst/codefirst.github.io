@@ -22,10 +22,6 @@ features:
 keywords: ["node.js", "pusher", "keima", "websocket"]
 ---
 
-### デモサイト
-
- * [Keima on Heroku](https://keima.herokuapp.com)
-
 ### ドキュメント
 
  * [Node.jsによるPusherクローン「Keima」をリリースしました (@mzp によるリリース記事)](http://mzp.hatenablog.com/entry/2012/08/11/144834)

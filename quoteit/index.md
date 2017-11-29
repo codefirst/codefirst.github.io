@@ -26,10 +26,6 @@ features:
 keywords: ["引用", "Twitter", "サムネイル", "WebAPI"]
 ---
 
-### 公開サイト
-
- * [Quote It](https://quoteit.herokuapp.com/)
-
 ### ドキュメント
 
  * [マニュアル](https://quoteit.readthedocs.org/)
