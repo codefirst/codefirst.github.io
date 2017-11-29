@@ -28,5 +28,5 @@ keywords: ["引用", "Twitter", "サムネイル", "WebAPI"]
 
 ### ドキュメント
 
- * [マニュアル](https://quoteit.readthedocs.org/)
+ * [マニュアル](https://quoteit.readthedocs.io/)
 

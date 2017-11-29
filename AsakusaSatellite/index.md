@@ -38,7 +38,7 @@ keywords: ["チャットアプリケーション", "Rails", "WebSocket"]
  * MongoDB 1.8.1 or later
  * Google Chrome / Firefox / Safari
 
-詳細は [AsakusaSatellite documentation - セットアップ](http://docs.asakusa-satellite.org/ja/latest/setup.html) をご覧ください。
+詳細は [AsakusaSatellite documentation - セットアップ](https://asakusasatellite.readthedocs.io/ja/latest/setup.html) をご覧ください。
 
 ### インストール
 
@@ -64,7 +64,7 @@ $ bundle exec rails server -e production
 
 ### ドキュメント
 
- * [マニュアル](http://docs.asakusa-satellite.org/)
+ * [マニュアル](https://asakusasatellite.readthedocs.io/)
  * [ブログ記事](http://blog.codefirst.org/tagged/AsakusaSatellite)
- * [発表資料 (名古屋 Reject 会議 02)](http://www.slideshare.net/mallowlabs/a-realtime-chat-application-for-developers-asakusasatellite)
- * [発表資料 (LL 名古屋)](http://www.slideshare.net/suer81/how-are-asakusasatellite-growing-with-mzp)
+ * [発表資料 (名古屋 Reject 会議 02)](https://www.slideshare.net/mallowlabs/a-realtime-chat-application-for-developers-asakusasatellite)
+ * [発表資料 (LL 名古屋)](https://www.slideshare.net/suer81/how-are-asakusasatellite-growing-with-mzp)
