@@ -27,6 +27,7 @@ keywords: [ "codefirst", "AsakusaSatellite", "keima", "dashbozu"]
 最速さん。codefirst プロダクトのプロトタイプ開発全般を担当する。
 作りはじめてから動くものが出来るまでが異常に速い。
 ただし、本当に速いのは作り始めてから飽きるまでの時間だという説もある。
+([個人ブログ](https://atsum.in))
 
 好きなエディタ: 秀丸 / 好きなブラウザ: InternetExplorer 6.0 / 好きなOS: Windows XP
 
