@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'kramdown'
+# use the versions in https://pages.github.com/versions.json
+gem 'jekyll', '3.10.0'
+gem 'kramdown', '2.4.0'
