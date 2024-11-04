@@ -37,10 +37,6 @@ KariyaSiesta は、CX-Checker の特徴に加え、以下の強化をしてい�
  * [CDT](http://www.eclipse.org/cdt/) 7.0 対応
  * Ecilpse更新サイト対応による容易なインストール
 
-### ドキュメント
-
- * [マニュアル](https://kariyasiesta.readthedocs.io/)
-
 ### リンク
 
  * [Sapid](http://www.sapid.org)
