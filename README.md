@@ -5,7 +5,7 @@ The offcial site of codefirst.
 Requirements
 ---------------------------
 
-    $ bundle install --path .bundle
+    $ BUNDLE_PATH=vendor/bundle bundle install
 
 How to commit:
 ---------------------------
