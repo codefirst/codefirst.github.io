@@ -68,4 +68,4 @@ DEPENDENCIES
   kramdown-parser-gfm (= 1.1.0)
 
 BUNDLED WITH
-   2.5.3
+   2.5.22
